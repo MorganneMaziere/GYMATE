@@ -1,2 +1,0 @@
-class Buddy < ApplicationRecord
-end

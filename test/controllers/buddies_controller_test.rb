@@ -1,6 +1,6 @@
 require "test_helper"
 
-class BuddyTest < ActiveSupport::TestCase
+class BuddiesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
