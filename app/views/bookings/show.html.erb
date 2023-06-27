@@ -1,0 +1,20 @@
+<div class = "container">
+  <h1>Here's your booking</h1>
+    <div>
+    <%# <% @user.bookings.each do |booking| %>
+    <li> Hi this is your booking id: <%= @booking.id %> </li>
+    <%# <% end %>
+    </div>
+</div>
+
+<h1>Here's your booking:</h1>
+
+  <div class="cards">
+    <% @event.bookings.each do |booking| %>
+      <div class = "card-category">
+          <%= booking.event.title %>
+          <%= booking.event.description %>
+          <%= link_to "Delete", dashboard_path(@dashboard), class: "btn btn-info", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      </div>
+    <% end %>
+  </div>
