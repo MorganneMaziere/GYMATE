@@ -1,0 +1,16 @@
+class CreateEvents < ActiveRecord::Migration[7.0]
+  def change
+    create_table :events do |t|
+      t.string :title
+      t.string :description
+      t.string :location
+      t.date :event_date
+      t.references :sport, null: false, foreign_key: true
+      t.datetime :starting_hour
+      t.datetime :ending_hour
+      t.references :user, null: false, foreign_key: true
+
+      t.timestamps
+    end
+  end
+end

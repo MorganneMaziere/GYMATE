@@ -1,0 +1,13 @@
+<h1>event index</h1>
+
+<div class="cards">
+    <% @events.each do |event| %>
+      <div class = "card-category">
+          <%= event.title %>
+          <%= event.location %>
+          <%= event.event_date %>
+          <%# <%= event.sport %>
+          <%= link_to "S'inscrire à l'événement", new_event_path(event), class: "btn inscription"%>
+      </div>
+    <% end %>
+</div>
