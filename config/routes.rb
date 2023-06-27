@@ -1,16 +1,25 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+  #buddies
   get "buddies", to: "buddies#index"
   get "buddies/:id", to: "buddies#show", as: :buddy
   post "buddies/:id", to: "buddies#create", as: :create_buddy
 
+  #events
   get "events", to: "events#index"
   get "events/:id", to: "events#show", as: :new_event
+
+  #bookings
+  get "bookings/:id", to: "bookings#show", as: :new_booking
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
-
+  resources :event do
+    resources :bookings, only: %i[show new create]
+  end
+  resources :bookings, only: %i[edit update destroy]
 
 end

@@ -1,5 +1,6 @@
 class BuddiesList < ApplicationRecord
   belongs_to :user
+  belongs_to :buddy, class_name: "User"
 
   def self.reacted?(id1, id2)
     case1 = !BuddiesList.where(user_id: id1, buddy_id: id2).empty?
