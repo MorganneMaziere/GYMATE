@@ -6,11 +6,28 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-User.destroy_all
 BuddiesList.destroy_all
+User.destroy_all
 
-admin = User.create!(email:"toto@gmail.com", password:"123456")
+puts "user creation"
+morganne = User.create!(email:"momo@gmail.com", password:"morganne")
 
-user1 = User.create!(email:"titi@gmail.com", password:"123456")
+charlotte = User.create!(email:"cha@gmail.com", password:"charlotte")
 
-buddyList = BuddiesList.create!(user: admin, buddy: user1)
+anouk = User.create!(email:"noukita@gmail.com", password:"anouk1")
+
+puts "finished!"
+
+# buddyList1 = BuddiesList.create!(user: morganne, buddy: charlotte)
+
+# buddyList2 = BuddiesList.create!(user: morganne, buddy: anouk)
+
+# buddyList3 = BuddiesList.create!(user: charlotte, buddy: anouk)
+
+puts "buddy creation"
+buddylist1 = morganne.BuddiesList.create!(buddy: charlotte)
+
+buddylist2 = morganne.BuddiesList.create!(buddy: anouk)
+
+buddylist3 = charlotte.BuddiesList.create!(buddy: anouk)
+puts "finished!"
