@@ -1,4 +1,18 @@
+<h1 class="mondash"><strong> Mon Dashboard </strong></h1>
+
 <% @buddies.each do |user| %>
   <%= user.email %>
   <%= link_to "buddy", buddy_path(user)%>
 <% end %>
+
+<div class="user" >
+  <%# <img src=  <%=     @user.profilepic = "https://source.unsplash.com/random/?person"%> /> %>
+ <div class="user-infos">
+  <h2> <%= @user.first_name%></h2>
+    <p> <%= @user.last_name%></p>
+    <p> <%= @user.location%></p>
+    <p> <%= @user.email%></p>
+  </div>
+  <div class= "user-bio"<%= @user.bio %> ></div>
+  <div> <a class = "bouton" href="#">Edit <i class="fas fa-pencil-alt"></i></a></div>
+</div>
