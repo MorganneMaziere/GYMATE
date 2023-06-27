@@ -1,0 +1,4 @@
+<% @buddies.each do |user| %>
+  <%= user.email %>
+  <%= link_to "buddy", buddy_path(user)%>
+<% end %>

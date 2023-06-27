@@ -1,0 +1,14 @@
+<h1> <strong> <%= @event.title %> </strong></h1>
+
+<div class="cards">
+  <div class = "card-category">
+      <%= @event.title %>
+      <%= @event.description %>
+      <%= @event.location %>
+      <%= @event.event_date %>
+      <%= @event.starting_hour %>
+      <%= @event.ending_hour %>
+      <%= @event.sport.name %>
+  </div>
+      <%= link_to "Retour à la liste des événement", events_path %>
+</div>
