@@ -1,33 +1,40 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: %i[destroy update edit]
+  before_action :set_event, only: %i[show edit update destroy registration]
 
-  def create
-    @event = Event.new(event_params)
-    @event.user = current_user
-    # @user_sport.photo_url = "https://source.unsplash.com/random/?tent"
-    # @tent.user = User.last
-    if @event.save!
-      redirect_to dashboard_path(@user)
-    else
-      render :new, status: :unprocessable_entity
-    end
+  def index
+    @events = Event.all
   end
+
+  def show; end
 
   def new
     @event = Event.new
   end
 
+  def create
+    @event = Event.new(event_params)
+    if @event.save
+      redirect_to @event, notice: 'Event was successfully created.'
+    else
+      render :new
+    end
+  end
+
   def edit; end
 
   def update
-    @event.update!(event_params)
-    redirect_to event_path
+    if @event.update(event_params)
+      redirect_to @event, notice: 'Event was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def destroy
     @event.destroy
-    redirect_to bookings_path, status: :see_other
+    redirect_to events_path, notice: 'Event was successfully destroyed.'
   end
+
 
   private
 
@@ -36,7 +43,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :description, :location, :sport, :starting_time, :ending_time, :user, :event_day)
+    params.require(:event).permit(:title, :description, :location, :event_day, :sport_id, :starting_time, :ending_time, :chatroom_id, :user_id)
   end
-end
 end
