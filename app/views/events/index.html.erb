@@ -6,7 +6,7 @@
           <%= event.title %>
           <%= event.location %>
           <%= event.event_date %>
-          <%# <%= event.sport %>
+          <%= event.sport %>
           <%= link_to "S'inscrire à l'événement", new_event_path(event), class: "btn inscription"%>
       </div>
     <% end %>

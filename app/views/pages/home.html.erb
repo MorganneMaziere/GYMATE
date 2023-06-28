@@ -1,3 +1,44 @@
-<h1>Welcome <%= @user.first_name %> </h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1 class="home_h1">Bienvenue <%= @user.first_name %> 💪</h1>
 
+<div class="container_home">
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: events_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Type a keyword"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<div class="favourite_budy">
+  <h2 class="home_h2">❤️ Mes Buddys ❤️</h2>
+
+
+</div>
+
+<div class="container_home">
+ <h2 class="home_h2">🗓️ Les événements à venir 🗓️</h2>
+</div>
+  <div class="calendar_cards">
+      <% @events.each do |event| %>
+        <div class = "event_card_home" style="background: url('<%= image_url event.sport.image %>'); background-size: 100%; background-position: center;">
+
+            <div style="padding: 4vmin;"><%= event.title %>
+            <br><%= event.location %>
+            <br><%= event.event_date %>
+            <br><%= event.sport.name%></div>
+           <div style="text-align: center;"> <%= link_to "S'inscrire à l'événement", new_event_path(event), class: "btn_inscription"%></div>
+        </div>
+      <% end %>
+  </div>
+</div>
+<div></div>
+
+<br>
+<%=  %>
