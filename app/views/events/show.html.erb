@@ -1,14 +1,17 @@
-<h1> <strong> <%= @event.title %> </strong></h1>
+<h1 class="h1_event"> <strong> <%= @event.title %> </strong></h1>
 
-<div class="cards">
-  <div class = "card-category">
-      <%= @event.title %>
-      <%= @event.description %>
-      <%= @event.location %>
-      <%= @event.event_date %>
-      <%= @event.starting_hour %>
-      <%= @event.ending_hour %>
-      <%= @event.sport.name %>
+<div class="container">
+  <div class="cards">
+    <div class = "card-category">
+        <p>Événement :<%= @event.title %></p>
+        <p>Objectif :<%= @event.description %></p>
+        <p>Se déroule :<%= @event.location %></p>
+        <p>Commence le :<%= @event.event_date.strftime("%m/%d/%Y") %></p>
+        <p>à :<%= @event.starting_hour.strftime("%R") %></p>
+        <p>et finit à :<%= @event.ending_hour.strftime("%R") %></p>
+        <p>Sport pratiqué :<%= @event.sport.name %></p>
+    </div>
+        <%= link_to "Retour à la liste des événement", root_path %>
   </div>
-      <%= link_to "Retour à la liste des événement", events_path %>
 </div>
+<p></p>

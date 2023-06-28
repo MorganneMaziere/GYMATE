@@ -3,7 +3,7 @@
 <div class="container_home">
   <div class="row justify-content-center">
     <div class="col-sm-8 my-3">
-      <%= form_with url: events_path, method: :get, class: "d-flex" do %>
+      <%= form_with url: root_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
               params[:query],
               class: "form-control",
@@ -33,7 +33,7 @@
             <br><%= event.location %>
             <br><%= event.event_date %>
             <br><%= event.sport.name%></div>
-           <div style="text-align: center;"> <%= link_to "S'inscrire à l'événement", new_event_path(event), class: "btn_inscription"%></div>
+           <div style="text-align: center;"> <%= link_to "Découvrir l'événement", event_path(event), class: "btn_inscription"%></div>
         </div>
       <% end %>
   </div>
