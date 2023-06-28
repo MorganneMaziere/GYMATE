@@ -21,7 +21,6 @@ charlotte = User.create!(email: 'cha@gmail.com', password: 'charlotte', first_na
 anouk = User.create!(email: 'noukita@gmail.com', password: 'anouk1', first_name: "Anouk", last_name: "Semerdjian", profilepic: "anouk.jpeg", description: "Salut, j'adore le sport et partager des moments aves mes amis!")
 puts 'finished!'
 
-
 # buddy
 puts 'buddy creation'
 buddyList1 = BuddiesList.create!(user: morganne, buddy: charlotte)
