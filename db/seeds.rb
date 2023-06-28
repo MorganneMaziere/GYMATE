@@ -14,11 +14,11 @@ User.destroy_all
 
 # user
 puts 'user creation'
-morganne = User.create!(email: 'momo@gmail.com', password: 'morganne')
+morganne = User.create!(email: 'momo@gmail.com', password: 'morganne', first_name: "Morganne", last_name: "Maziere", profilepic: "morganne.jpeg", description: "Salut, j'adore le sport et partager des moments aves mes amis!" )
 
-charlotte = User.create!(email: 'cha@gmail.com', password: 'charlotte')
+charlotte = User.create!(email: 'cha@gmail.com', password: 'charlotte', first_name: "Charlotte", last_name: "Salmona", profilepic: "charlotte.jpeg", description: "Salut, j'adore le sport et partager des moments aves mes amis!")
 
-anouk = User.create!(email: 'noukita@gmail.com', password: 'anouk1')
+anouk = User.create!(email: 'noukita@gmail.com', password: 'anouk1', first_name: "Anouk", last_name: "Semerdjian", profilepic: "anouk.jpeg", description: "Salut, j'adore le sport et partager des moments aves mes amis!")
 puts 'finished!'
 
 
