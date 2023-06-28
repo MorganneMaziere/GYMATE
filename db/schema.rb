@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema[7.0].define(version: 2023_06_28_133907) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,6 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_28_133907) do
     t.bigint "buddy_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "confirmed"
     t.index ["buddy_id"], name: "index_buddies_lists_on_buddy_id"
     t.index ["user_id"], name: "index_buddies_lists_on_user_id"
   end
@@ -89,6 +92,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_28_133907) do
     t.string "description"
     t.string "location"
     t.string "avaibility"
+    t.bigint "buddies_list_id"
+    t.index ["buddies_list_id"], name: "index_users_on_buddies_list_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -102,4 +107,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_28_133907) do
   add_foreign_key "reviews", "bookings"
   add_foreign_key "user_sports", "sports"
   add_foreign_key "user_sports", "users"
+  add_foreign_key "users", "buddies_lists"
 end

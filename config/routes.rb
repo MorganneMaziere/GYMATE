@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   #buddies
-  get "buddies", to: "buddies#index"
-  get "buddies/:id", to: "buddies#show", as: :buddy
-  post "buddies/:id", to: "buddies#create", as: :create_buddy
+  get "/buddies_lists", to: "buddies_lists#index"
+  get "buddies_lists/:id", to: "buddies_lists#show", as: :buddy
+  post "buddies_lists/:id", to: "buddies_lists#create", as: :create_buddy
 
   #events
   get "events", to: "events#index"

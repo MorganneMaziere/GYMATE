@@ -3,11 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :BuddiesList
-  has_many :buddies, through: :BuddiesList
+  has_many :buddies_lists
+  has_many :buddies, through: :buddies_lists
+  has_many :user_sports, dependent: :destroy
+  has_many :sports, through: :user_sports
   has_many :registrations
   has_many :pending_invitations, -> { where confirmed: false }, class_name: 'Invitation', foreign_key: "buddy_id"
-  has_many :user_sports, dependent: :destroy
   has_many :events, dependent: :destroy
   has_many :bookings, dependent: :destroy
 

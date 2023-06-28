@@ -1,0 +1,32 @@
+<div>
+  <h1 class= "buddy-name"> <%= @buddy.first_name %></h1>
+</div>
+
+  <div class="card-buddy">
+    <%= image_tag(@buddy.profilepic) %>
+    <div class="card-buddy-infos">
+      <h2> <%= @buddy.description %> </h2>
+      <p><%= @buddy.location %></p>
+    </div>
+  </div>
+
+  <div>
+    <h1> Ses prochains évènements </h1>
+  </div>
+
+  <div>
+    <h1> Ce que l'on pense de <%= @buddy.first_name %></h1>
+  </div>
+
+
+<%# <meta charset= "UTF -8" />
+<meta name= "viewport"
+content= "width=device-width,
+initial-scale=1.0" />
+<title>Heart like button </title>
+
+<link rel= "stylesheet" href="assets/css/style.css" />
+
+<div class= "heart"></div>
+<div class= "animation-heart"></div>
+<script src="assets/js/app.js"></script> %>

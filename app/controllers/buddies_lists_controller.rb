@@ -1,13 +1,22 @@
-class BuddiesController < ApplicationController
+class BuddiesListsController < ApplicationController
   before_action :set_buddy, only: %i[show edit destroy update]
 
   def index
-    @buddies = User.all
+    @buddies_lists = current_user.buddies_lists
+    @buddies = []
+    @buddies_lists.each do |buddies_list|
+      @buddies << buddies_list.buddy
+    end
+
+    @buddies_by_sport = []
+    @buddies.each do |buddy|
+      current_user.sports.each do |sport|
+        @buddies_by_sport << buddy if buddy.sports.include?(sport) && !@buddies_by_sport.include?(buddy)
+      end
+    end
   end
 
-  def show
-    @new_buddy = BuddiesList.new
-  end
+  def show; end
 
   def new
     @buddy = Buddy.new
@@ -25,6 +34,7 @@ class BuddiesController < ApplicationController
   def edit; end
 
   def update
+    @buddy.confirmed = true
     if @buddy.update(buddy_params)
       redirect_to @buddy, notice: 'Buddy was successfully updated.'
     else
@@ -44,6 +54,6 @@ class BuddiesController < ApplicationController
   end
 
   def buddy_params
-    params.require(:buddy).permit(:user_id, :buddy_id)
+    params.require(:buddy).permit(:name, :photo_url, :user_id, :buddy_id)
   end
 end

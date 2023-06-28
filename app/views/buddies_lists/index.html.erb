@@ -1,0 +1,46 @@
+<%# <% @buddies.each do |user| %>
+  <%# <%= user.email %>
+  <%# <%= link_to "buddy", buddy_path(user)%>
+<%# <% end %>
+
+<div>
+<h1>All my buddies</h1>
+</div>
+
+  <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
+    <div class="search-form-control form-group">
+
+      <%= form_with url: buddies_lists_path, method: :get do |form| %>
+        <div class="input-group">
+          <%= form.text_field :query, placeholder: "Looking for a buddy...", class: "form-control" %>
+          <div class="input-group-append">
+            <%= form.button type: "submit", class: "btn" do %>
+              <i class="fas fa-search"></i>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </form>
+
+<div class= "buddies-favorite">
+  <div>
+    <h1>My favorite buddies</h1>
+    <% @buddies.each do |buddy| %>
+      <%= link_to buddy_path(buddy) do %>
+        <% image_tag(buddy.profilepic) %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class= "buddies-by-sport">
+    <h1> My favorite buddies by sport</h1>
+    <% @buddies_by_sport.each do |buddy| %>
+      <%= link_to buddy_path(buddy) do %>
+        <% image_tag(buddy.profilepic) %>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
