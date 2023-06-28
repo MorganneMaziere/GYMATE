@@ -37,14 +37,15 @@ puts 'finished!'
 # sport
 puts 'sport creation'
 yoga = Sport.create!(name: 'Yoga', level: 'Débutant',
-                    description: "Le yoga est une pratique holistique qui combine des postures physiques,
-                    des exercices de respiration et la méditation pour favoriser la flexibilité, la force
-                    et la paix intérieure.")
+  description: "Le yoga est une pratique holistique qui combine des postures physiques,
+  des exercices de respiration et la méditation pour favoriser la flexibilité, la force
+  et la paix intérieure.", image: 'yoga.jpeg')
 
 jump = Sport.create!(name: 'Jump', level: 'Confirmé',
-                    description: "Jump est un sport fitness à haute intensité qui implique différents
-                    mouvements explosifs, tels que des sauts, des squats et des fentes, conçu pour améliorer
-                    l'endurance cardiovasculaire et la force musculaire..")
+  description: "Jump est un sport fitness à haute intensité qui implique différents
+  mouvements explosifs, tels que des sauts, des squats et des fentes, conçu pour améliorer
+  l'endurance cardiovasculaire et la force musculaire..", image: 'jump.jpeg')
+
 puts 'finished!'
 
 
@@ -64,8 +65,10 @@ event1 = Event.create!(title: 'Yoga Morning', description: 'Cours de yoga pour d
   location: 'Marseille', event_date: '12.07.2023', sport: yoga, user: morganne)
 
 event2 = Event.create!(title: 'Yoga evening', description: 'Cours de yoga pour confirmé',
-  location: 'Marseille', event_date: '12.07.2023', sport: yoga, user: morganne)
+  location: 'Marseille', event_date: '13.07.2023', sport: yoga, user: morganne)
 
+event3 = Event.create!(title: 'Jump afternoon', description: 'Cours de jump pour motivé',
+  location: 'Marseille', event_date: '14.09.2023', sport: jump, user: morganne)
 puts 'finished'
 
 # booking
