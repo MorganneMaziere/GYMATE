@@ -27,10 +27,6 @@
 <div class= "buddies-favorite">
   <div>
     <h1>My favorite buddies</h1>
-    <%# <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
-    <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
-    <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
-    <img class="avatar-square" alt="avatar-square" src="https://kitt.lewagon.com/placeholder/users/krokrob" /> %>
     <% @buddies.each do |buddy| %>
       <%= link_to buddy_path(buddy) do %>
         <% image_tag(buddy.profilepic) %>
@@ -38,8 +34,13 @@
     <% end %>
   </div>
 
-  <div>
-    <h1 class= "buddies by sport"> My favorite buddies by sport</h1>
+  <div class= "buddies-by-sport">
+    <h1> My favorite buddies by sport</h1>
+    <% @buddies_by_sport.each do |buddy| %>
+      <%= link_to buddy_path(buddy) do %>
+        <% image_tag(buddy.profilepic) %>
+      <% end %>
+    <% end %>
   </div>
 
 </div>
