@@ -7,11 +7,16 @@ class BuddiesListsController < ApplicationController
     @buddies_lists.each do |buddies_list|
       @buddies << buddies_list.buddy
     end
+
+    @buddies_by_sport = []
+    @buddies.each do |buddy|
+      current_user.sports.each do |sport|
+        @buddies_by_sport << buddy if buddy.sports.include?(sport) && !@buddies_by_sport.include?(buddy)
+      end
+    end
   end
 
-  def show
-    @new_buddy = BuddiesList.new
-  end
+  def show; end
 
   def new
     @buddy = Buddy.new
