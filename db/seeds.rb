@@ -15,11 +15,11 @@ User.destroy_all
 
 # user
 puts 'user creation'
-morganne = User.create!(email: 'momo@gmail.com', password: 'morganne', first_name: "Morganne", last_name: "Maziere", profilepic: "morganne.jpeg", description: "Salut, j'adore le sport et partager des moments aves mes amis!", location: "Marseille" )
+morganne = User.create!(email: 'momo@gmail.com', password: 'morganne', first_name: "Morganne", last_name: "Maziere", profilepic: "morganne.jpg", description: "Salut, j'adore le sport et partager des moments aves mes amis!", location: "Marseille" )
 
-charlotte = User.create!(email: 'cha@gmail.com', password: 'charlotte', first_name: "Charlotte", last_name: "Salmona", profilepic: "charlotte.jpeg", description: "Salut, j'adore le sport et partager des moments aves mes amis!", location: "Marseille")
+charlotte = User.create!(email: 'cha@gmail.com', password: 'charlotte', first_name: "Charlotte", last_name: "Salmona", profilepic: "charlotte.jpg", description: "Salut, j'adore le sport et partager des moments aves mes amis!", location: "Marseille")
 
-anouk = User.create!(email: 'noukita@gmail.com', password: 'anouk1', first_name: "Anouk", last_name: "Semerdjian", profilepic: "anouk.jpeg", description: "Salut, j'adore le sport et partager des moments aves mes amis!", location: "Marseille")
+anouk = User.create!(email: 'noukita@gmail.com', password: 'anouk1', first_name: "Anouk", last_name: "Semerdjian", profilepic: "anouk.jpg", description: "Salut, j'adore le sport et partager des moments aves mes amis!", location: "Marseille")
 puts 'finished!'
 
 # buddy
@@ -39,12 +39,12 @@ puts 'sport creation'
 yoga = Sport.create!(name: 'Yoga', level: 'Débutant',
   description: "Le yoga est une pratique holistique qui combine des postures physiques,
   des exercices de respiration et la méditation pour favoriser la flexibilité, la force
-  et la paix intérieure.", image: 'yoga.jpeg')
+  et la paix intérieure.", image: 'yoga.jpg')
 
 jump = Sport.create!(name: 'Jump', level: 'Confirmé',
   description: "Jump est un sport fitness à haute intensité qui implique différents
   mouvements explosifs, tels que des sauts, des squats et des fentes, conçu pour améliorer
-  l'endurance cardiovasculaire et la force musculaire..", image: 'jump.jpeg')
+  l'endurance cardiovasculaire et la force musculaire..", image: 'jump.jpg')
 
 puts 'finished!'
 
