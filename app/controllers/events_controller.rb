@@ -2,11 +2,11 @@ class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
 
   def index
-    @query = params[:query]
-    @events = Event.all
-    if params[:query].present?
-      @events = Event.global_search(params[:query])
-    end
+    # @query = params[:query]
+    # @events = Event.all
+    # if params[:query].present?
+    #   @events = Event.global_search(params[:query])
+    # end
   end
 
   # def index
@@ -16,11 +16,11 @@ class EventsController < ApplicationController
   #   end
   # end
 
-
   def show; end
 
   def new
     @event = Event.new
+    @sports = Sport.all
   end
 
   def create

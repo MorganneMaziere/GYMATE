@@ -62,13 +62,16 @@ puts 'finished!'
 # event
 puts 'event creation'
 event1 = Event.create!(title: 'Yoga Morning', description: 'Cours de yoga pour débutant',
-  location: 'Marseille', event_date: '12.07.2023', sport: yoga, user: morganne)
+  location: 'Marseille', event_date: Date.new(2023, 7, 12), sport: yoga, user: morganne,
+  starting_hour: Time.new(2023, 7, 12, 8, 30, 0), ending_hour: Time.new(2023, 7, 12, 10, 30, 0))
 
 event2 = Event.create!(title: 'Yoga evening', description: 'Cours de yoga pour confirmé',
-  location: 'Marseille', event_date: '13.07.2023', sport: yoga, user: morganne)
+  location: 'Marseille', event_date: Date.new(2023, 7, 14), sport: yoga, user: morganne,
+  starting_hour: Time.new(2023, 7, 14, 18, 30, 0), ending_hour: Time.new(2023, 7, 14, 20, 30, 0))
 
 event3 = Event.create!(title: 'Jump afternoon', description: 'Cours de jump pour motivé',
-  location: 'Marseille', event_date: '14.09.2023', sport: jump, user: morganne)
+  location: 'Marseille', event_date: Date.new(2023, 7, 16), sport: jump, user: morganne,
+  starting_hour: Time.new(2023, 7, 16, 16, 30, 0), ending_hour: Time.new(2023, 7, 14, 18, 30, 0))
 puts 'finished'
 
 # booking
