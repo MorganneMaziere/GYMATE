@@ -16,7 +16,9 @@ class EventsController < ApplicationController
   #   end
   # end
 
-  def show; end
+  def show
+    @events = Event.all
+  end
 
   def new
     @event = Event.new
