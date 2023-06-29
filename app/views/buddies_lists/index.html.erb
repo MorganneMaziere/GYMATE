@@ -34,8 +34,8 @@
     <% end %>
   </div>
 
-  <div>
-    <h1>All my buddies</h1>
+ <h1 class="buddy_h1"><strong>All my buddies</strong></h1>
+  <div class="cardy">
     <% @buddies_lists.each do |buddies_list| %>
       <%= link_to buddy_path(buddies_list) do %>
         <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
@@ -54,8 +54,11 @@
 
 <h1 class= "buddy_h1"> Sorted by sport</h1>
 
+
+<div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("yoga.jpg")%>');">
+  <p>Yoga</p>
+</div>
 <div class="card-pro">
-  <%= image_tag ("yoga.jpg") %>
  <div class= "buddies-by-sport">
     <% @buddies_lists.each do |buddies_list| %>
       <%= link_to buddy_path(buddies_list) do %>
@@ -65,8 +68,10 @@
   </div>
 </div>
 
+<div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("boxe.jpg")%>');">
+  <p>Boxe</p>
+</div>
 <div class="card-pro">
- <%= image_tag ("boxe.jpg") %>
   <div class= "buddies-by-sport">
     <% @buddies_lists.each do |buddies_list| %>
       <%= link_to buddy_path(buddies_list) do %>
@@ -76,15 +81,19 @@
     </div>
   </div>
 
+
+<div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("crossfit.jpg")%>');">
+  <p>Crossfit</p>
+</div>
   <div class="card-pro">
-    <%= image_tag ("crossfit.jpg") %>
-    <div class= "buddies-by-sport">
         <% @buddies_lists.each do |buddies_list| %>
           <%= link_to buddy_path(buddies_list) do %>
             <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
           <% end %>
       <% end %>
-    </div>
   </div>
 
+<div>
+ <a class="btn btn-voir" href="#">Voir plus</a>
+</div>
 </div>

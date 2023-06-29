@@ -5,6 +5,10 @@ export default class extends Controller {
 
   static targets = [ "like", "dislike" ]
 
+  connect () {
+    console.log("hello");
+  }
+
   like() {
     this.likeTarget.classList.add("d-none");
     this.dislikeTarget.classList.remove("d-none");

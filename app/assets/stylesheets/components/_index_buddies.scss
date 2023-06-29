@@ -3,17 +3,17 @@
   margin-top: 4vmin;
   margin-bottom: 4vmin;
   font-weight: bold;
-  margin-top: 35px;
-  margin-bottom: 35px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .avatar {
   width: 80px;
   border-radius: 50%;
   justify-self: center;
-  margin-left: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-left: 6px;
+  margin-top: 9px;
+  margin-bottom: 3px;
 }
 
 .avatar-large {
@@ -50,11 +50,12 @@
   border-radius: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
+  margin: 4vmin;
 }
 
 .card-pro img {
   height: 100%;
-  width: 86px;
+  width: 73px;
   object-fit: cover;
 }
 
@@ -84,4 +85,48 @@
   width: 20px;
   border-radius: 50%;
   margin: 2vmin
+}
+
+.cardy {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+  margin: 4vmin
+}
+
+.cardou {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 4vmin;
+  border-radius: 20px;
+}
+
+.btn-voir {
+  color: white;
+  border: 1px solid white;
+  background-color: #506a7b;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+}
+
+.btn-voir:hover {
+  opacity: 1;
+  background-color: #506a7b;
 }
