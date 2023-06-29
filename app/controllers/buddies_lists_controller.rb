@@ -3,6 +3,7 @@ class BuddiesListsController < ApplicationController
 
   def index
     @buddies_lists = current_user.buddies_lists
+    # @event = Event.all
     @buddies = []
     @buddies_lists.each do |buddies_list|
       @buddies << buddies_list.buddy
