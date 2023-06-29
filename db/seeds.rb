@@ -27,15 +27,13 @@ puts 'finished!'
 
 # buddy
 puts 'buddy creation'
-buddyList1 = BuddiesList.create!(user: morganne, buddy: charlotte)
-buddyList2 = BuddiesList.create!(user: morganne, buddy: anouk)
-buddyList3 = BuddiesList.create!(user: charlotte, buddy: anouk)
-buddyList4 = BuddiesList.create!(user: charlotte, buddy: morganne)
-buddyList5 = BuddiesList.create!(user: anouk, buddy: morganne)
-buddyList6 = BuddiesList.create!(user: anouk, buddy: charlotte)
-# buddylist1 = morganne.BuddiesList.create!(buddy: charlotte)
-# buddylist2 = morganne.BuddiesList.create!(buddy: anouk)
-# buddylist3 = charlotte.BuddiesList.create!(buddy: anouk)
+BuddiesList.create!(user: morganne, buddy: charlotte)
+BuddiesList.create!(user: morganne, buddy: anouk)
+BuddiesList.create!(user: morganne, buddy: jeanloup)
+BuddiesList.create!(user: morganne, buddy: gabriel)
+BuddiesList.create!(user: morganne, buddy: gaspard)
+BuddiesList.create!(user: morganne, buddy: alice)
+BuddiesList.create!(user: morganne, buddy: clara)
 puts 'finished!'
 
 
