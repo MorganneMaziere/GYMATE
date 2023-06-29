@@ -27,18 +27,27 @@
 <div class= "buddies-favorite">
   <div>
     <h1>My favorite buddies</h1>
-    <% @buddies.each do |buddy| %>
+    <% @favorite_buddies.each do |buddy| %>
       <%= link_to buddy_path(buddy) do %>
-        <% image_tag(buddy.profilepic) %>
+        <% image_tag(buddy.profilepic, class: "avatar") %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div>
+    <h1>All my buddies</h1>
+    <% @buddies_lists.each do |buddies_list| %>
+      <%= link_to buddy_path(buddies_list) do %>
+        <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
       <% end %>
     <% end %>
   </div>
 
   <div class= "buddies-by-sport">
     <h1> My favorite buddies by sport</h1>
-    <% @buddies_by_sport.each do |buddy| %>
-      <%= link_to buddy_path(buddy) do %>
-        <% image_tag(buddy.profilepic) %>
+    <% @buddies_lists.each do |buddies_list| %>
+      <%= link_to buddy_path(buddies_list) do %>
+        <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
       <% end %>
     <% end %>
   </div>

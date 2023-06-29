@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/buddies_lists", to: "buddies_lists#index"
   get "buddies_lists/:id", to: "buddies_lists#show", as: :buddy
   post "buddies_lists/:id", to: "buddies_lists#create", as: :create_buddy
+  patch "buddies_lists/:id", to: "buddies_lists#update"
 
   #events
   resources :events do
