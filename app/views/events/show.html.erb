@@ -1,19 +1,81 @@
-<h1 class="h1_event"> <strong> <%= @event.title %> </strong></h1>
 
-<div class="container">
-  <div class="cards">
-    <div class = "card-category">
-        <p>Événement :<%= @event.title %></p>
-        <p>Objectif :<%= @event.description %></p>
-        <p>Se déroule :<%= @event.location %></p>
-        <p>Commence le :<%= @event.event_date.strftime("%d/%m/%Y") %></p>
-        <p>à :<%= @event.starting_hour.strftime("%R") %></p>
-        <p>et finit à :<%= @event.ending_hour.strftime("%R") %></p>
-        <p>Sport pratiqué :<%= @event.sport.name %></p>
-    </div>
-        <%= link_to "Retour à la liste des événement", root_path %>
+ <h1><strong><p>Événement : <%= @event.title %></p></strong></h1>
+ 
+<div class="banner" style="background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_url @event.sport.image %>'); background-size: 100%; background-position: bottom;">
+  <div class="container">
+    <p>Un moment pour soi… lâcher prise et détente assurée !</p>
+    <a class="btn btn-inscrit" href="#">Je m'inscris</a>
   </div>
 </div>
+
+<div class="notification">
+    <p><small>Objectif :</small></p>
+    <p><%= @event.description %></p></p>
+  </div>
+
+<div class="notification">
+    <p><small>Se déroule à : </small></p>
+    <p><%= @event.location %></p></p>
+  </div>
+  <div class="notification">
+    <p><small> Le :</small></p>
+    <p><%= @event.event_date.strftime("%d/%m/%Y") %></p></p>
+  </div>
+
+ <div class="notification">
+    <p><small>Débute à :</small></p>
+    <p><%= @event.starting_hour.strftime("%R") %></p></p>
+  </div>
+
+  <div class="notification">
+    <p><small>Finit à :</small></p>
+    <p><%= @event.ending_hour.strftime("%R") %></p></p>
+  </div>
+
+  <div class="notification">
+    <p><small>Sport pratiqué :</small></p>
+    <p><%= @event.sport.name %></p></p>
+  </div>
+</div>
+
+<div class="prof">
+  <img src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+  <div class="prof-infos">
+    <h2>Le Professeur</h2>
+    <p>Ce cours est organisé par :<strong> Alex</strong>.</p>
+  </div>
+</div>
+
+<div>
+<a class="btn btn-flat" href="#">Je m'inscris</a>
+</div>
+<div class="container_home">
+ <h2 class="home_h2">🗓️ Autres évènements 🗓️</h2>
+</div>
+  <div class="salut">
+      <% @events.last(2).each do |event| %>
+        <div class = "event_card_home"  style="background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_url event.sport.image %>'); background-size: 100%; background-position: center;">
+
+            <div style="padding: 4vmin;"><%= event.title %>
+            <br><%= event.location %>
+            <br><%= event.event_date %>
+            <br><%= event.sport.name%></div>
+           <div style="text-align: center;"> <%= link_to "Découvrir l'événement", event_path(event), class: "btn_inscription"%></div>
+        </div>
+      <% end %>
+  </div>
+</div>
+   <div class ="btn btn-third" >  <%= link_to "Voir Plus", root_path %>
+  </div>
+
+  <%# <div class="flash flash-success alert alert-dismissible fade show" role="alert">
+  <span><strong>Bonne Nouvelle !</strong> 🎉 il reste de la place dans ce cours.</span>
+  <a data-bs-dismiss="alert" aria-label="Close">
+    <i class="fas fa-times"></i>
+  </a>
+</div> %>
+</div>
+
 <p></p>
 
 <%# ('X%d/X%m/%Y') %>
