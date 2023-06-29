@@ -33,7 +33,6 @@
 .calendar_cards {
   margin: auto 4vmin;
   text-align: center;
-  height: 80vh
 }
 
 .event_card_home img{
@@ -58,9 +57,15 @@
   font-size: 16px;
   text-decoration: none;
   text-align: center;
-  :hover {
+  &:hover {
       transition: all .1s ease;
       box-shadow: 0 0 0 0 #fff, 0 0 0 3px #000000;
+  }
+  &:active {
+    color: white;
+  }
+  :focus {
+    color: white;
   }
 }
 
