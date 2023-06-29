@@ -18,6 +18,7 @@ class EventsController < ApplicationController
 
   def show
     @events = Event.all
+    @booking = Booking.new
   end
 
   def new

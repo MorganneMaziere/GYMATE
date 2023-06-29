@@ -2,6 +2,7 @@ class Event < ApplicationRecord
   belongs_to :sport
   belongs_to :user
   has_many :bookings, dependent: :destroy
+  has_many :users, through: :bookings
 
   include PgSearch::Model
   pg_search_scope :global_search,
