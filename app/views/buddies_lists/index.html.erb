@@ -4,7 +4,7 @@
 <%# <% end %>
 
 <div>
-<h1>All my buddies</h1>
+<h1 class= "buddy_h1">ALL MY BUDDIES</h1>
 </div>
 
   <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
@@ -24,9 +24,9 @@
     </div>
   </form>
 
-<div class= "buddies-favorite">
+<div class= "buddies-favorite" style="text-align: center;">
   <div>
-    <h1>My favorite buddies</h1>
+    <h1 class= "buddy_h1">My favorite buddies</h1>
     <% @favorite_buddies.each do |buddy| %>
       <%= link_to buddy_path(buddy) do %>
         <% image_tag(buddy.profilepic, class: "avatar") %>
@@ -43,13 +43,49 @@
     <% end %>
   </div>
 
+  <%# <div class= "buddies-by-sport">
+    <h1 class= "buddy_h1"> Sorted by sport</h1>
+    <%# <% @buddies_by_sport.each do |buddy| %>
+      <%# <%= link_to buddy_path(buddy) do %>
+        <%# <% image_tag(buddy.profilepic, class: "avatar") %>
+      <%# <% end %>
+    <%# <% end %>
+  <%# </div> %>
+
+<h1 class= "buddy_h1"> Sorted by sport</h1>
+
+<div class="card-pro">
+  <%= image_tag ("yoga.jpg") %>
+ <div class= "buddies-by-sport">
+    <% @buddies_by_sport.last(3).each do |buddy| %>
+      <%= link_to buddy_path(buddy) do %>
+        <% image_tag(buddy.profilepic, class: "avatar_2") %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="card-pro">
+ <%= image_tag ("boxe.jpg") %>
   <div class= "buddies-by-sport">
     <h1> My favorite buddies by sport</h1>
     <% @buddies_lists.each do |buddies_list| %>
       <%= link_to buddy_path(buddies_list) do %>
-        <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
+        <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
       <% end %>
     <% end %>
+    </div>
+  </div>
+
+  <div class="card-pro">
+<%= image_tag ("crossfit.jpg") %>
+ <div class= "buddies-by-sport">
+    <% @buddies_by_sport.last(3).each do |buddy| %>
+      <%= link_to buddy_path(buddy) do %>
+        <% image_tag(buddy.profilepic, class: "avatar_2") %>
+      <% end %>
+    <% end %>
+  </div>
   </div>
 
 </div>
