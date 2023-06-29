@@ -19,23 +19,21 @@ morganne = User.create!(email: 'momo@gmail.com', password: 'morganne', first_nam
 charlotte = User.create!(email: 'cha@gmail.com', password: 'charlotte', first_name: "Charlotte", last_name: "Salmona", profilepic: "charlotte.jpg", description: "Salut, j'adore le sport et partager des moments aves mes amis!", location: "Marseille")
 anouk = User.create!(email: 'noukita@gmail.com', password: 'anouk1', first_name: "Anouk", last_name: "Semerdjian", profilepic: "anouk.jpg", description: "Salut, j'adore le sport et partager des moments aves mes amis!", location: "Marseille")
 jeanloup = User.create!(email: 'jl@gmail.com', password: 'morganne', first_name: "JeanLoup", last_name: "Perez", profilepic: "jl.jpg", description: "Salut, j'adore le sport et partager des moments aves mes amis!", location: "Marseille" )
-gabriel = User.create!(email: 'gabi@gmail.com', password: 'morganne', first_name: "Gabriel", last_name: "Lauzier", profilepic: "gabi.jpg", description: "Salut, j'adore le sport et partager des moments aves mes amis!", location: "Marseille")
-gaspard = User.create!(email: 'gaspou@gmail.com', password: 'morganne', first_name: "Gaspard", last_name: "Lachaize", profilepic: "gaspou.jpg", description: "Salut, j'adore le sport et partager des moments aves mes amis!", location: "Marseille")
+gabriel = User.create!(email: 'gabi@gmail.com', password: 'morganne', first_name: "Gabriel", last_name: "Lauzier", profilepic: "gabi.png", description: "Salut, j'adore le sport et partager des moments aves mes amis!", location: "Marseille")
+gaspard = User.create!(email: 'gaspou@gmail.com', password: 'morganne', first_name: "Gaspard", last_name: "Lachaize", profilepic: "gaspou.png", description: "Salut, j'adore le sport et partager des moments aves mes amis!", location: "Marseille")
 alice = User.create!(email: 'alice@gmail.com', password: 'morganne', first_name: "Alice", last_name: "Gorius", profilepic: "alice.jpg", description: "Salut, j'adore le sport et partager des moments aves mes amis!", location: "Marseille" )
 clara = User.create!(email: 'clara@gmail.com', password: 'morganne', first_name: "Clara", last_name: "Holm", profilepic: "clara.jpg", description: "Salut, j'adore le sport et partager des moments aves mes amis!", location: "Marseille")
 puts 'finished!'
 
 # buddy
 puts 'buddy creation'
-buddyList1 = BuddiesList.create!(user: morganne, buddy: charlotte)
-buddyList2 = BuddiesList.create!(user: morganne, buddy: anouk)
-buddyList3 = BuddiesList.create!(user: charlotte, buddy: anouk)
-buddyList4 = BuddiesList.create!(user: charlotte, buddy: morganne)
-buddyList5 = BuddiesList.create!(user: anouk, buddy: morganne)
-buddyList6 = BuddiesList.create!(user: anouk, buddy: charlotte)
-# buddylist1 = morganne.BuddiesList.create!(buddy: charlotte)
-# buddylist2 = morganne.BuddiesList.create!(buddy: anouk)
-# buddylist3 = charlotte.BuddiesList.create!(buddy: anouk)
+BuddiesList.create!(user: morganne, buddy: charlotte)
+BuddiesList.create!(user: morganne, buddy: anouk)
+BuddiesList.create!(user: morganne, buddy: jeanloup)
+BuddiesList.create!(user: morganne, buddy: gabriel)
+BuddiesList.create!(user: morganne, buddy: gaspard)
+BuddiesList.create!(user: morganne, buddy: alice)
+BuddiesList.create!(user: morganne, buddy: clara)
 puts 'finished!'
 
 
