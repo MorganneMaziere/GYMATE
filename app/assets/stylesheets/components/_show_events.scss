@@ -48,9 +48,9 @@
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 16px;
   color: white;
-  opacity: .7;
+  opacity: .5;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
@@ -62,29 +62,26 @@ text-align : center;
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #670BFF;
+  background: #506a7b;
   transition: background 0.3s ease;
   margin-top: 10px;
-  margin-left: 120px;
 }
 
 .btn-flat:hover {
-  background: #4D04C4;
+  background: #506a7b;
   color: white;
 }
 
 .btn-inscrit {
   color: white;
+  border: 1px solid white;
   padding: 8px 24px;
-  border-radius: 4px;
-  background: #670BFF;
-  transition: background 0.3s ease;
-  margin-top: 15px;
+  border-radius: 50px;
+  font-weight: lighter;
 }
 
 .btn-inscrit:hover {
-  background: #4D04C4;
-  color: white;
+  opacity: 1;
 }
 
 .cards {
@@ -97,7 +94,7 @@ text-align : center;
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #670BFF;
+  background: #506a7b;
   transition: background 0.3s ease;
   margin-top: 10px;
   margin-left: 127px;
@@ -106,10 +103,11 @@ text-align : center;
 .btn-third a{
   color: white;
   text-decoration: none;
+  margin-bottom: 20px;
 }
 
 .btn-third:hover {
-  background: #4D04C4;
+  background: #506a7b;
   color: white;
 }
 
@@ -230,4 +228,18 @@ text-align : center;
 
 .prof .prof-infos {
   padding: 16px;
+}
+
+.events_h1{
+  text-align: center;
+  margin-top: 4vmin;
+  margin-bottom: 4vmin;
+  font-weight: bold;
+}
+
+.events_h2 {
+  text-align: center;
+  margin-top: 4vmin;
+  margin-bottom: 4vmin;
+  font-weight: bold;
 }

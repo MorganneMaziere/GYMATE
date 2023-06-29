@@ -1,5 +1,5 @@
- <h1><strong><p>Événement : <%= @event.title %></p></strong></h1>
- 
+ <h1 class= "events_h1"><%= @event.title %></h1>
+
 <div class="banner" style="background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_url @event.sport.image %>'); background-size: 100%; background-position: bottom;">
   <div class="container">
     <p>Un moment pour soi… lâcher prise et détente assurée !</p>
@@ -45,11 +45,11 @@
   </div>
 </div>
 
-<div>
-<a class="btn btn-flat" href="#">Je m'inscris</a>
+<div style="padding: 4vmin; text-align: center;">
+<a class="btn btn-flat" href="#" >Je m'inscris</a>
 </div>
 <div class="container_home">
- <h2 class="home_h2">🗓️ Autres évènements 🗓️</h2>
+ <h2 class="events_h2">🗓️ Autres évènements 🗓️</h2>
 </div>
   <div class="salut">
       <% @events.last(2).each do |event| %>
@@ -67,12 +67,12 @@
    <div class ="btn btn-third" >  <%= link_to "Voir Plus", root_path %>
   </div>
 
-  <%# <div class="flash flash-success alert alert-dismissible fade show" role="alert">
+  <div class="flash flash-success alert alert-dismissible fade show" role="alert">
   <span><strong>Bonne Nouvelle !</strong> 🎉 il reste de la place dans ce cours.</span>
   <a data-bs-dismiss="alert" aria-label="Close">
     <i class="fas fa-times"></i>
   </a>
-</div> %>
+</div>
 </div>
 
 <p></p>
