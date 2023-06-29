@@ -1,17 +1,43 @@
-<h1 class="h1_event"> <strong> <%= @event.title %> </strong></h1>
+<div class="banner" style="background: url('<%= image_url @event.sport.image %>'); background-size: 100%;">
+  <div class="container">
+    <h1><strong><p>Événement : <%= @event.title %></p></strong></h1>
+    <p>Un moment pour soi… lâcher prise et détente assurée !</p>
+    <a class="btn btn-flat" href="#">Je m'inscris</a>
+  </div>
+</div>
 
+</div>
 <div class="container">
   <div class="cards">
     <div class = "card-category">
-        <p>Événement :<%= @event.title %></p>
         <p>Objectif :<%= @event.description %></p>
         <p>Se déroule :<%= @event.location %></p>
-        <p>Commence le :<%= @event.event_date.strftime("%m/%d/%Y") %></p>
+        <p>Commence le :<%= @event.event_date.strftime("%d/%m/%Y") %></p>
         <p>à :<%= @event.starting_hour.strftime("%R") %></p>
         <p>et finit à :<%= @event.ending_hour.strftime("%R") %></p>
         <p>Sport pratiqué :<%= @event.sport.name %></p>
-    </div>
-        <%= link_to "Retour à la liste des événement", root_path %>
+
+</div>
+<h2> This class is run by Alex </h2> <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+<a class="btn btn-flat" href="#">Je m'inscris</a>
+
+<div class="container_home">
+ <h2 class="home_h2">🗓️ Autres évènements 🗓️</h2>
+</div>
+  <div class="salut">
+      <% @events.last(2).each do |event| %>
+        <div class = "event_card_home" style="background: url('<%= image_url event.sport.image %>'); background-size: 100%; background-position: center;">
+
+            <div style="padding: 4vmin;"><%= event.title %>
+            <br><%= event.location %>
+            <br><%= event.event_date %>
+            <br><%= event.sport.name%></div>
+           <div style="text-align: center;"> <%= link_to "Découvrir l'événement", event_path(event), class: "btn_inscription"%></div>
+        </div>
+      <% end %>
+  </div>
+</div>
+   <div class ="btn btn-flat" >  <%= link_to "Voir Plus", root_path %>
   </div>
 </div>
 <p></p>
