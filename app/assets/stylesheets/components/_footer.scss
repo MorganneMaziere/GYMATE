@@ -1,0 +1,17 @@
+.footer-lewagon {
+  justify-content: space-between;
+  background: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  color: black;
+}
+
+.footer-lewagon .footer-collapse {
+  flex-grow: 0;
+  text-align: center;
+  font-size: 40px;
+  padding-top: 15px;
+  color: black;
+}
