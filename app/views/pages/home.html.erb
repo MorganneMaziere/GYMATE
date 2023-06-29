@@ -23,23 +23,22 @@
 </div>
 
 <div class="container_home">
- <h2 class="home_h2">🗓️ Les événements à venir 🗓️</h2>
+  <h2 class="home_h2">🗓️ Les événements à venir 🗓️</h2>
 </div>
-  <div class="calendar_cards">
-      <% @events.each do |event| %>
-        <div class = "event_card_home" style="background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_url event.sport.image %>'); background-size: 100%; background-position: center;">
 
-            <div >
-            <div style="font-weight: bold; font-size: 24px; color: white;"><%= event.title %></div>
-            <%= event.location %>
-            <br><%= event.event_date.strftime("%d/%m/%Y") %>
-            <br><%= event.sport.name%></div>
-           <div style="text-align: center; padding: 3vmin;"> <%= link_to "Découvrir l'événement", event_path(event), class: "btn_inscription"%></div>
+<div class="calendar_cards">
+    <% @events.each do |event| %>
+      <div class = "event_card_home" style="background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_url event.sport.image %>'); background-size: 100%; background-position: center;">
+        <div>
+          <div style="font-weight: bold; font-size: 24px; color: white;"><%= event.title %></div>
+          <%= event.location %>
+          <br><%= event.event_date.strftime("%d/%m/%Y") %>
+          <br><%= event.sport.name%></div>
+          <div style="text-align: center; padding: 3vmin;"> <%= link_to "Découvrir l'événement", event_path(event), class: "btn_inscription"%></div>
         </div>
-      <% end %>
-  </div>
+    <% end %>
+      </div>
 </div>
-<div></div>
 
-<br>
-<%=  %>
+<div style="text-align: center; padding: 3vmin;"> <%= link_to "Créer un événement", new_event_path, class: "btn_inscription"%></div>
+
