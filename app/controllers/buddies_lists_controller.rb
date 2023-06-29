@@ -3,17 +3,20 @@ class BuddiesListsController < ApplicationController
 
   def index
     @buddies_lists = current_user.buddies_lists
-    # @event = Event.all
-    @buddies = []
-    @buddies_lists.each do |buddies_list|
-      @buddies << buddies_list.buddy
-    end
 
-    @buddies_by_sport = []
-    @buddies.each do |buddy|
-      current_user.sports.each do |sport|
-        @buddies_by_sport << buddy if buddy.sports.include?(sport) && !@buddies_by_sport.include?(buddy)
-      end
+    # @buddies_by_sport = []
+
+    # @buddies_lists.each do |buddy_list|
+    #   current_user.sports.each do |sport|
+    #     if buddy_list.buddy.sports.include?(sport) && !@buddies_by_sport.include?(buddy)
+    #       @buddies_by_sport << buddy_list.buddy
+    #     end
+    #   end
+    # end
+
+    @favorite_buddies = []
+    @buddies_lists.where(confirmed: true).each do |buddies_list|
+      @favorite_buddies << buddies_list.buddy
     end
   end
 
@@ -35,12 +38,14 @@ class BuddiesListsController < ApplicationController
   def edit; end
 
   def update
-    @buddy.confirmed = true
-    if @buddy.update(buddy_params)
-      redirect_to @buddy, notice: 'Buddy was successfully updated.'
-    else
-      render :edit
-    end
+    @buddies_list = BuddiesList.find(params[:id])
+    @buddies_list.confirmed = true
+    @buddies_list.save
+    # if @buddy.update(buddy_params)
+    #   redirect_to @buddy, notice: 'Buddy was successfully updated.'
+    # else
+    #   render :edit
+    # end
   end
 
   def destroy
@@ -51,7 +56,7 @@ class BuddiesListsController < ApplicationController
   private
 
   def set_buddy
-    @buddy = User.find(params[:id])
+    @buddies_list = BuddiesList.find(params[:id])
   end
 
   def buddy_params
