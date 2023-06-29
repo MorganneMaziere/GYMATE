@@ -36,10 +36,11 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-
+    @booking = Booking.new
+    @booking.user = current_user
+    @booking.event = Event.find(params[:event_id])
     if @booking.save
-      redirect_to events_path(@booking), notice: 'Booking was successfully created.'
+      redirect_to root_path, notice: 'Booking was successfully created.'
     else
       render :new
     end
@@ -67,6 +68,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:event_id, :user_id, :validated)
+    params.require(:booking).permit(:event_id)
   end
 end
