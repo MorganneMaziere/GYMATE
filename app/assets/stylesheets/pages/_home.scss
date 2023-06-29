@@ -3,12 +3,14 @@
   text-align: center;
   margin-top: 4vmin;
   margin-bottom: 4vmin;
+  font-weight: bold;
 }
 
 .home_h2 {
   text-align: center;
   margin-top: 4vmin;
   margin-bottom: 4vmin;
+  font-weight: bold;
 }
 
 .event_card_home {
@@ -51,7 +53,7 @@
   border-radius: 3px;
   padding: 3vmin;
   color: #fff;
-  background: #767676;
+  background: #506a7b;
   line-height: 1.15;
   font-size: 16px;
   text-decoration: none;
@@ -66,4 +68,8 @@
   text-align: center;
   margin-top: 4vmin;
   margin-bottom: 4vmin;
+}
+
+.btn-primary {
+  --bs-btn-bg: #506a7b;
 }
