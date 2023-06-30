@@ -242,3 +242,16 @@ text-align : center;
   margin-bottom: 4vmin;
   font-weight: bold;
 }
+
+.edit_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #506a7b;
+}
+
+.fa-pencil-alt {
+  color: #506a7b;
+  text-decoration: none;
+}
