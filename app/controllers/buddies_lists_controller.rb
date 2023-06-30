@@ -20,7 +20,12 @@ class BuddiesListsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @events = []
+    current_user.bookings.each do |booking|
+      @events << booking.event
+    end
+  end
 
   def new
     @buddy = Buddy.new
