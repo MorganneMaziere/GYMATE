@@ -10,4 +10,7 @@ class PagesController < ApplicationController
       @events = Event.global_search(params[:query])
     end
   end
+
+  def dashboard
+  end
 end
