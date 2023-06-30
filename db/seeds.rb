@@ -104,15 +104,15 @@ event3 = Event.create!(title: 'Jump afternoon', description: 'Cours de jump pour
   starting_hour: Time.new(2023, 7, 16, 16, 30, 0), ending_hour: Time.new(2023, 7, 16, 18, 30, 0))
 
 event4 = Event.create!(title: 'Crosstraining', description: 'Cours de crossfit pour débutant',
-  location: 'Marseille', event_date: Date.new(2023, 7, 18), sport: crossfit, user: morganne,
+  location: 'Marseille', event_date: Date.new(2023, 7, 18), sport: crossfit, user: charlotte,
   starting_hour: Time.new(2023, 7, 18, 10, 30, 0), ending_hour: Time.new(2023, 7, 18, 12, 30, 0))
 
 event5 = Event.create!(title: 'Assouplissement', description: 'Cours de yoga pour confirmé',
-  location: 'Marseille', event_date: Date.new(2023, 7, 20), sport: yoga, user: morganne,
+  location: 'Marseille', event_date: Date.new(2023, 7, 20), sport: yoga, user: gabriel,
   starting_hour: Time.new(2023, 7, 20, 8, 30, 0), ending_hour: Time.new(2023, 7, 20, 10, 30, 0))
 
 event6 = Event.create!(title: 'Body attack', description: 'Cours de boxe pour personne',
-  location: 'Marseille', event_date: Date.new(2023, 7, 22), sport: boxe, user: morganne,
+  location: 'Marseille', event_date: Date.new(2023, 7, 22), sport: boxe, user: anouk,
   starting_hour: Time.new(2023, 7, 22, 16, 30, 0), ending_hour: Time.new(2023, 7, 22, 18, 30, 0))
 puts 'finished'
 
@@ -124,7 +124,7 @@ booking2 = Booking.create!(user: anouk, event: event6)
 
 booking3 = Booking.create!(user: charlotte, event: event3)
 
-booking4 = Booking.create!(user: morganne, event: event4)
+# booking4 = Booking.create!(user: morganne, event: event4)
 
 booking5 = Booking.create!(user: charlotte, event: event5)
 

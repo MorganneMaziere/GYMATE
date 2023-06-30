@@ -19,6 +19,7 @@ class EventsController < ApplicationController
   def show
     @events = Event.all
     @booking = Booking.new
+    @booking_to_destroy = @event.bookings.find_by(user: current_user)
   end
 
   def new
