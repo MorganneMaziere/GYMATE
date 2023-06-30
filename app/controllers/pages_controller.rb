@@ -16,4 +16,7 @@ class PagesController < ApplicationController
       @favorite_buddies << buddies_list.buddy
     end
   end
+
+  def dashboard
+  end
 end

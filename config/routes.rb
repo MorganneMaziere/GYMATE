@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post "buddies_lists/:id", to: "buddies_lists#create", as: :create_buddy
   patch "buddies_lists/:id", to: "buddies_lists#update"
 
+  get "dashboard", to: "pages#dashboard"
+
   #events
   resources :events do
     resources :bookings, except: [:destroy]

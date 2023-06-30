@@ -1,0 +1,26 @@
+.card_info_user {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  padding: 4vmin;
+}
+
+.photo_user image{
+  width: 100px;
+}
+
+.card_booking {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: block;
+  text-align: center;
+  align-items: center;
+}
+
+.profileinfos {
+  padding: 3vmin;
+}

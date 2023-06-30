@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :pending_invitations, -> { where confirmed: false }, class_name: 'Invitation', foreign_key: "buddy_id"
   has_many :events, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  has_many :events, through: :bookings
 
   def registered_for?(event)
     registrations.exists?(event_id: event.id)

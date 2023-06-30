@@ -10,7 +10,7 @@
     <p>Un moment pour soi… lâcher prise et détente assurée !</p>
     <div style="padding: 4vmin; text-align: center;">
         <% if @event.users.include?(current_user) %>
-          <%= link_to "Me désinscrire", booking_path(@booking_to_destroy), class: "btn btn-flat", data: {turbo_method: :delete, tubro_confirm: "Êtes-vous sur de vouloir vous désinscrire?" }  %>
+          <%= link_to "Me désinscrire", booking_path(@booking_to_destroy), class: "btn btn-flat", data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sur de vouloir vous désinscrire?" }  %>
         <% else %>
       <%= simple_form_for [@event, @booking] do |f|%>
       <%= f.submit "Je m'inscris", class: "btn btn-flat"%>
@@ -64,6 +64,10 @@
 <%= simple_form_for [@event, @booking] do |f|%>
   <%= f.submit "Je m'inscris", class: "btn btn-flat"%>
 <% end %>
+
+<%= link_to "Supprimer mon événement", event_path(@event), class: "btn btn-flat", data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sur de vouloir supprimer cet événement?" }  %>
+
+
 </div>
 <div class="container_home">
  <h2 class="events_h2">🗓️ Autres évènements 🗓️</h2>
