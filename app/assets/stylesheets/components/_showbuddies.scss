@@ -5,3 +5,112 @@
 .dislike {
   color: red;
 }
+
+.buddy-card{
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.buddy-card img{
+height: 100%;
+width: 120px;
+object-fit: cover;
+}
+
+.buddy-card h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.buddy-card p {
+  font-size: 16px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  padding: 4px;
+}
+
+.buddy-card .buddy-infos {
+  padding: 16px;
+}
+
+.buddy-bio {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+  margin: 4vmin;
+  padding: 20px;
+}
+
+.rev{
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    margin: 4vmin
+  }
+
+.favorite{
+  margin-left: 100px;
+  
+}
+
+.btn-voirevents {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #506a7b;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+  margin-left: 78px;
+}
+
+.btn-voirevents a{
+  color: white;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+
+.avatar5 {
+  width: 80px;
+  border-radius: 50%;
+  justify-self: center;
+  padding: 10px;
+}
+
+.avatar5-large {
+  width: 56px;
+  border-radius: 50%;
+}
+
+.avatar5-bordered {
+  width: 40px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+}
+
+.avatar5-square {
+  width: 40px;
+  border-radius: 0px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+}
