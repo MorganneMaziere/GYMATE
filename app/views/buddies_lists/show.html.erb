@@ -6,16 +6,16 @@
   </div>
   <div class="favorite" data-controller="favorite">
     <%= button_to buddy_path(@buddies_list), method: :patch, class: 'btn btn-accept' do %>
-      <i class="fa-regular fa-heart like" data-action="click->favorite#like" data-favorite-target="like"></i>
+      <i class="fa-regular fa-heart like fa-2xl" data-action="click->favorite#like" data-favorite-target="like"></i>
     <% end %>
-    <i class="fa-solid fa-heart dislike d-none" data-action="click->favorite#dislike" data-favorite-target="dislike"></i>
+    <i class="fa-solid fa-heart dislike d-none fa-2xl" data-action="click->favorite#dislike" data-favorite-target="dislike"></i>
   </div>
 </div>
 
 
 <div class="buddy-bio">
   <h1 class="bio">La description de : <strong> <%= @buddies_list.buddy.first_name %></strong></h1>
-  <p class="bio"> <%= @buddies_list.buddy.description %> </p>
+  <p class="bio"> "<%= @buddies_list.buddy.description %>"</p>
 </div>
 
 <div class="rev">
@@ -27,12 +27,18 @@
   </select>
 </div>
 
+<%# <div class="tag-item">
+<%= simple_form_for(@sport) do |f| %>
+    <%# <%= f.input :sport, class: "tag-selector", type: checkbox %>
+    <%# <%= f.label :sport.name %>
+<%# <% end %>
+<%# </div> %>
 
-<div>
+<div class=avisbud>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <div class ="avis">
-    <h1> Ce que l'on pense de : <%= @buddies_list.buddy.first_name %></h1>
+    <h1> Ce que l'on pense de : <strong><%= @buddies_list.buddy.first_name %></strong> </h1>
     <span class="fa fa-star checked"></span>
     <span class="fa fa-star checked"></span>
     <span class="fa fa-star checked"></span>
