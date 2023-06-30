@@ -4,7 +4,7 @@
 <%# <% end %>
 
 <div>
-<h1 class= "buddy_h1">ALL MY BUDDIES</h1>
+<h1 class= "buddy_h1">MES GYMATES</h1>
 </div>
 
   <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
@@ -25,8 +25,8 @@
   </form>
 
 <div class= "buddies-favorite" style="text-align: center;">
-  <div>
-    <h1 class= "buddy_h1">My favorite buddies</h1>
+  <div class="pref">
+    <h1 class= "buddy_h1">Mes préférés</h1>
     <% @favorite_buddies.each do |buddy| %>
       <%= link_to buddy_path(buddy) do %>
         <% image_tag(buddy.profilepic, class: "avatar") %>
@@ -34,8 +34,8 @@
     <% end %>
   </div>
 
- <h1 class="buddy_h1"><strong>All my buddies</strong></h1>
   <div class="cardy">
+   <h1 class="buddy_h1"><strong>Tout</strong></h1>
     <% @buddies_lists.each do |buddies_list| %>
       <%= link_to buddy_path(buddies_list) do %>
         <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
@@ -52,7 +52,7 @@
     <%# <% end %>
   <%# </div> %>
 
-<h1 class= "buddy_h1"> Sorted by sport</h1>
+<h1 class= "buddy_h1"> Triés par sport</h1>
 
 
 <div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("yoga.jpg")%>');">
