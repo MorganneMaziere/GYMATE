@@ -5,10 +5,22 @@
     <p class="buddy-location"> <%= @buddies_list.buddy.location %></p>
   </div>
   <div class="favorite" data-controller="favorite">
-    <%= button_to buddy_path(@buddies_list), method: :patch, class: 'btn btn-accept' do %>
-      <i class="fa-regular fa-heart like" data-action="click->favorite#like" data-favorite-target="like"></i>
+    <% if @buddies_list.confirmed == true %>
+      <%= button_to buddy_path(@buddies_list), params: { status: "like" }, method: :patch, class: 'btn btn-accept' do %>
+        <i class="fa-regular fa-heart like d-none" data-action="click->favorite#like" data-favorite-target="like"></i>
+      <% end %>
+      <%= button_to buddy_path(@buddies_list), params: { status: "dislike" }, method: :patch, class: 'btn btn-accept' do %>
+        <i class="fa-solid fa-heart dislike" data-action="click->favorite#dislike" data-favorite-target="dislike"></i>
+      <% end %>
+    <% elsif @buddies_list.confirmed == false || @buddies_list.confirmed.nil? %>
+      <%= button_to buddy_path(@buddies_list), params: { status: "like" }, method: :patch, class: 'btn btn-accept' do %>
+        <i class="fa-regular fa-heart like" data-action="click->favorite#like" data-favorite-target="like"></i>
+      <% end %>
+      <%= button_to buddy_path(@buddies_list), params: { status: "dislike" }, method: :patch, class: 'btn btn-accept' do %>
+        <i class="fa-solid fa-heart dislike d-none" data-action="click->favorite#dislike" data-favorite-target="dislike"></i>
+      <% end %>
     <% end %>
-    <i class="fa-solid fa-heart dislike d-none" data-action="click->favorite#dislike" data-favorite-target="dislike"></i>
+
   </div>
 </div>
 

@@ -27,9 +27,9 @@
 <div class= "buddies-favorite" style="text-align: center;">
   <div>
     <h1 class= "buddy_h1">My favorite buddies</h1>
-    <% @favorite_buddies.each do |buddy| %>
-      <%= link_to buddy_path(buddy) do %>
-        <% image_tag(buddy.profilepic, class: "avatar") %>
+    <% @favorite_buddies.each do |buddies_list| %>
+      <%= link_to buddy_path(buddies_list) do %>
+        <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
       <% end %>
     <% end %>
   </div>
