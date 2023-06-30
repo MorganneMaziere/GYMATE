@@ -16,7 +16,7 @@ class BuddiesListsController < ApplicationController
 
     @favorite_buddies = []
     @buddies_lists.where(confirmed: true).each do |buddies_list|
-      @favorite_buddies << buddies_list.buddy
+      @favorite_buddies << buddies_list
     end
   end
 
@@ -39,7 +39,11 @@ class BuddiesListsController < ApplicationController
 
   def update
     @buddies_list = BuddiesList.find(params[:id])
-    @buddies_list.confirmed = true
+    if params[:status] == "like"
+      @buddies_list.confirmed = true
+    else
+      @buddies_list.confirmed = false
+    end
     @buddies_list.save
     # if @buddy.update(buddy_params)
     #   redirect_to @buddy, notice: 'Buddy was successfully updated.'

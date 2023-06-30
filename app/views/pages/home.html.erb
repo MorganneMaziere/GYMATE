@@ -18,7 +18,11 @@
 
 <div class="favourite_budy">
   <h2 class="home_h2">❤️ Mes Buddys ❤️</h2>
-
+      <% @favorite_buddies.each do |buddy| %>
+      <%= link_to buddy_path(buddy) do %>
+        <% image_tag(buddy.profilepic, class: "avatar") %>
+      <% end %>
+    <% end %>
 
 </div>
 
