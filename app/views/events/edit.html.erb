@@ -1,0 +1,23 @@
+<h1 class="h1-form">Que souhaitez vous modifier ?</h1>
+<div class="container">
+  <div class="form">
+    <%= simple_form_for [@event] do |f| %>
+      <div>
+
+        <%= f.input :title %>
+
+        <%= f.input :description %>
+
+        <%= f.input :event_date%>
+
+        <%= f.input :sport, collection: Sport.all, label_method: :name, include_blank: @event.sport.name %>
+
+        <%= f.input :starting_hour %>
+
+        <%= f.input :ending_hour %>
+
+        <%= f.submit "Modifier l'événement ✅", class: "submit_btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -20,6 +20,7 @@ class EventsController < ApplicationController
     @events = Event.all
     @booking = Booking.new
     @booking_to_destroy = @event.bookings.find_by(user: current_user)
+    # @event_to_destroy = @event.find_by(user: current_user)
   end
 
   def new
@@ -49,9 +50,8 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    redirect_to events_path, notice: 'Event was successfully destroyed.'
+    redirect_to root_path, notice: 'Event was successfully destroyed.'
   end
-
 
   private
 

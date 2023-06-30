@@ -1,11 +1,9 @@
 <div class="footer footer-lewagon">
-  <div class="footer-links footer-lewagon footer-collapse d-flex justify-content-around">
+  <div class="footer-links footer-lewagon footer-collapse">
     <%= link_to "", root_path, class: "fa-solid fa-house", style: "color: black" %>
-    <%# <%= link_to "", event_bookings_path, class: "fa-regular fa-calendar", style: "color: black" %> 
-    <%# <%= link_to "", buddy_path, class: "fa-regular fa-user-group", style: "color: black" %>
+    <%= link_to "", new_event_path, class: "fa-regular fa-calendar", style: "color: black" %>
+    <%= link_to "", buddies_lists_path, class: "fa-solid fa-user-group", style: "color: black" %>
     <%= link_to "", root_path, class: "fa-solid fa-message", style: "color: black" %>
-    <%= link_to "", root_path, class: "fa-solid fa-user", style: "color: black"%>
-  </div>
+    <%= link_to "", dashboard_path, class: "fa-solid fa-user", style: "color: black"%>
   <div class="footer-copyright">
-  </div>
 </div>
