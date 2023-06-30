@@ -9,8 +9,10 @@ Rails.application.routes.draw do
 
   #events
   resources :events do
-    resources :bookings
+    resources :bookings, except: [:destroy]
   end
+
+  resources :bookings, only: [:destroy]
 
   #bookings
   # get "bookings/:id", to: "bookings#show", as: :new_booking
