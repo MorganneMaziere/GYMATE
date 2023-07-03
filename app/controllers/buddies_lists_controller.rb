@@ -23,7 +23,6 @@ class BuddiesListsController < ApplicationController
 
   def show
     @events = []
-    
     current_user.bookings.each do |booking|
       @events << booking.event
     end
