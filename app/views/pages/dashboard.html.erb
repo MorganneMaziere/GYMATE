@@ -28,7 +28,7 @@
             <br><%= event.location %>
             <br><%= event.event_date %>
             <br><%= event.sport.name%></div>
-      <%= link_to "Supprimer cet événement", event_bookings_path(event.bookings), class: "btn btn-flat", data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sur de vouloir supprimer cet événement?" }  %>
+      <%= link_to "Supprimer cet événement", booking_path(current_user.bookings.where(event:event).first), class: "btn btn-flat", data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sur de vouloir supprimer cet événement?" }  %>
         </div>
   <% end %>
 </div>
