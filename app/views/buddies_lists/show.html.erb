@@ -32,11 +32,11 @@
 
 <div class="rev">
   <label class="label" for="user"><strong>Les sports pratiqués par : <%= @buddies_list.buddy.first_name %></strong></label>
-  <select name="pets" id="options">
-      <option value="Sport">Yoga</option>
-      <option value="Sport">Boxe</option>
-      <option value="Sport">Crossfit</option>
-  </select>
+ <div class="d-flex">
+  <% @buddies_list.buddy.sports.each do |sport| %>
+      <div class="purple-badge"> <%= sport.name %></div>
+     <% end %>
+  </div>
 </div>
 
 <%# <div class="tag-item">
