@@ -4,15 +4,15 @@
 <%# <% end %>
 
 <div>
-<h1 class= "buddy_h1">ALL MY BUDDIES</h1>
+<h1 class= "buddy_h1"> MES GYMATES</h1>
 </div>
 
   <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
-    <div class="search-form-control form-group">
+    <div class="searchbar">
 
       <%= form_with url: buddies_lists_path, method: :get do |form| %>
         <div class="input-group">
-          <%= form.text_field :query, placeholder: "Looking for a buddy...", class: "form-control" %>
+          <%= form.text_field :query, placeholder: "Je recherche un buddy...", class: "form-control" %>
           <div class="input-group-append">
             <%= form.button type: "submit", class: "btn" do %>
               <i class="fas fa-search"></i>
@@ -26,7 +26,7 @@
 
 <div class= "buddies-favorite" style="text-align: center;">
   <div>
-    <h1 class= "buddy_h1">My favorite buddies</h1>
+    <h1 class= "buddy_h1">MES FAVORIS</h1>
     <% @favorite_buddies.each do |buddies_list| %>
       <%= link_to buddy_path(buddies_list) do %>
         <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
@@ -34,7 +34,7 @@
     <% end %>
   </div>
 
- <h1 class="buddy_h1"><strong>All my buddies</strong></h1>
+ <h1 class="buddy_h1"><strong>TOUS</strong></h1>
   <div class="cardy">
     <% @buddies_lists.each do |buddies_list| %>
       <%= link_to buddy_path(buddies_list) do %>
@@ -52,7 +52,7 @@
     <%# <% end %>
   <%# </div> %>
 
-<h1 class= "buddy_h1"> Sorted by sport</h1>
+<h1 class= "buddy_h1"> Par sport</h1>
 
 
 <div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("yoga.jpg")%>');">
