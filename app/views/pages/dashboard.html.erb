@@ -1,25 +1,25 @@
 <div>
-  <h1 style="font-weight: bold;text-align: center; padding: 4vmin;">Mon dashboard</h1>
+  <h1 style="font-weight: bold;text-align: center; padding: 4vmin;">Mon journal de bord</h1>
 </div>
 
 <h2 class="titredash" style="font-weight: bold;text-align: center; padding: 4vmin;">Mes infos</h2>
 <div class="edit-link">
-<%= link_to edit_user_registration_path, class: "edit_btn" do %> Edit <i class="fas fa-pencil-alt"></i>
+<%= link_to edit_user_registration_path, class: "edit_btn" do %> Modifier <i class="fas fa-pencil-alt"></i>
 <% end %>
 </div>
 
 <div class= "card_info_user">
-  <div class="photo_user">
+  <div>
     <%= image_tag current_user.profilepic, class: "avatar"%>
   </div>
   <div class= "profileinfos">
-    <p> <%= current_user.first_name%> <%= current_user.last_name%></p>
-    <p> <%= current_user.description%></p>
+    <p> <strong><%= current_user.first_name%> <%= current_user.last_name%></strong></p>
     <p> <%= current_user.location%></p>
+    <p> <%= current_user.description%></p>
   </div>
 </div>
 
-<h2 style="font-weight: bold;text-align: center; padding: 4vmin;">My Bookings</h2>
+<h2 style="font-weight: bold;text-align: center; padding: 4vmin;">Mes évènements</h2>
 <div class="card_booking">
   <% current_user.events.each do |event| %>
    <div class = "event_card_home"  style="background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_url event.sport.image %>'); background-size: 100%; background-position: center;">

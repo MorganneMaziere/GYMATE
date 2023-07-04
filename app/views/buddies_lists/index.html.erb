@@ -95,7 +95,29 @@
       <% end %>
   </div>
 
+  <div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("jump.jpg")%>');">
+  <p>Jump</p>
+</div>
+  <div class="card-pro">
+        <% @buddies_lists.last(4).each do |buddies_list| %>
+          <%= link_to buddy_path(buddies_list) do %>
+            <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
+          <% end %>
+      <% end %>
+  </div>
+
+  <div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("cardio.jpg")%>');">
+  <p>Cardio</p>
+</div>
+  <div class="card-pro">
+        <% @buddies_lists.last(4).each do |buddies_list| %>
+          <%= link_to buddy_path(buddies_list) do %>
+            <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
+          <% end %>
+      <% end %>
+  </div>
+
 <div>
- <a class="btn btn-voir" href="#">Voir plus</a>
+ <%= link_to "Découvrir les évènements", root_path, class: "btn btn-voir"%>
 </div>
 </div>
