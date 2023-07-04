@@ -40,6 +40,7 @@ class BuddiesListsController < ApplicationController
 
   def new
     @buddies_list = BuddiesList.new
+    @chatroom = Chatroom.new
   end
 
   def create
@@ -47,6 +48,7 @@ class BuddiesListsController < ApplicationController
     @buddies_list.user = current_user
 
     if @buddies_list.save
+      # @chatroom.buddies_list = @buddies_list
       redirect_to @buddies_list, notice: 'Buddy was successfully created.'
     else
       render :new
