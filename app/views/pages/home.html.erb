@@ -7,9 +7,9 @@
         <%= text_field_tag :query,
               params[:query],
               class: "form-control",
-              placeholder: "Type a keyword"
+              placeholder: "Tapez votre recherche"
         %>
-        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+        <%= submit_tag "Rechercher", name: "", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
@@ -18,9 +18,9 @@
 
 <div class="favourite_budy">
   <h2 class="home_h2">❤️ Mes Buddys ❤️</h2>
-      <% @favorite_buddies.each do |buddy| %>
-      <%= link_to buddy_path(buddy) do %>
-        <% image_tag(buddy.profilepic, class: "avatar") %>
+      <% @favorite_buddies.each do |buddies_list| %>
+      <%= link_to buddies_list_path(buddies_list) do %>
+        <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
       <% end %>
     <% end %>
 

@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :event
-  has_many :reviews, dependent: :destroy
+  # has_many :reviews, dependent: :destroy
 end

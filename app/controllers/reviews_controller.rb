@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :set_buddies_list, only: %i[new create]
   before_action :set_review, only: %i[show edit update destroy]
 
   # GET /reviews
@@ -9,16 +10,17 @@ class ReviewsController < ApplicationController
   # GET /reviews/:id
   def show; end
 
+  def new
+    @review = Review.new
+  end
+
   # POST /reviews
   def create
     @review = Review.new(review_params)
-    @buddy = Buddy.find(params[:buddy_id])
-    @review.buddy = @buddy
-    # @review.buddy = current_user
+    @review.buddies_list = @buddies_list
+    @review.user = current_user
     if @review.save
-      redirect_to buddy_path(@buddy), status: :created
-    else
-      render @review.errors, status: :unprocessable_entity
+      redirect_to buddies_list_path(@buddies_list)
     end
   end
 
@@ -35,7 +37,7 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/:id
   def destroy
     @review.destroy
-    redirect_to buddy_path(@review.buddy)
+    redirect_to buddies_list_path(@review.buddies_list)
   end
 
   private
@@ -44,7 +46,11 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 
+  def set_buddies_list
+    @buddies_list = BuddiesList.find(params[:buddies_list_id])
+  end
+
   def review_params
-    params.require(:review).permit(:rating, :comment, :booking_id)
+    params.require(:review).permit(:rating, :comment, :user, :buddies_list)
   end
 end

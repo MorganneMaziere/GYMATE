@@ -4,31 +4,25 @@
 <%# <% end %>
 
 <div>
-<h1 class= "buddy_h1"> MES GYMATES</h1>
+  <h1 class= "buddy_h1"> MES GYMATES</h1>
 </div>
 
-  <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
-    <div class="searchbar">
-
-      <%= form_with url: buddies_lists_path, method: :get do |form| %>
-        <div class="input-group">
-          <%= form.text_field :query, placeholder: "Je recherche un buddy...", class: "form-control" %>
-          <div class="input-group-append">
-            <%= form.button type: "submit", class: "btn" do %>
-              <i class="fas fa-search"></i>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-
-    </div>
-  </form>
+  <div class="search-bar">
+    <%= form_with url: buddies_lists_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Je recherche un buddy..."
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 
 <div class= "buddies-favorite" style="text-align: center;">
   <div>
     <h1 class= "buddy_h1">MES FAVORIS</h1>
     <% @favorite_buddies.each do |buddies_list| %>
-      <%= link_to buddy_path(buddies_list) do %>
+      <%= link_to buddies_list_path(buddies_list) do %>
         <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
       <% end %>
     <% end %>
@@ -37,7 +31,7 @@
  <h1 class="buddy_h1"><strong>TOUS</strong></h1>
   <div class="cardy">
     <% @buddies_lists.each do |buddies_list| %>
-      <%= link_to buddy_path(buddies_list) do %>
+      <%= link_to buddies_list_path(buddies_list) do %>
         <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
       <% end %>
     <% end %>
@@ -52,50 +46,95 @@
     <%# <% end %>
   <%# </div> %>
 
-<h1 class= "buddy_h1"> Par sport</h1>
+  <h1 class= "buddy_h1"> Par sport</h1>
 
 
-<div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("yoga.jpg")%>');">
-  <p>Yoga</p>
-</div>
-
-<div class="card-pro">
- <div class= "buddies-by-sport">
-    <% @buddies_lists.last(4).each do |buddies_list| %>
-      <%= link_to buddy_path(buddies_list) do %>
-        <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
-      <% end %>
-    <% end %>
+  <div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("yoga.jpg")%>');">
+    <p>Yoga</p>
   </div>
-</div>
 
-<div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("boxe.jpg")%>');">
-  <p>Boxe</p>
-</div>
-
-<div class="card-pro">
-  <div class= "buddies-by-sport">
-    <% @buddies_lists.last(4).each do |buddies_list| %>
-      <%= link_to buddy_path(buddies_list) do %>
-        <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-
-
-<div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("crossfit.jpg")%>');">
-  <p>Crossfit</p>
-</div>
   <div class="card-pro">
-        <% @buddies_lists.last(4).each do |buddies_list| %>
-          <%= link_to buddy_path(buddies_list) do %>
+  <div class= "buddies-by-sport">
+      <% @buddies_by_sport.each do |buddies_list| %>
+        <% buddies_list.buddy.sports.each do |buddy_sport| %>
+          <% if buddy_sport.name == "Yoga" %>
+            <%= link_to buddies_list_path(buddies_list) do %>
+              <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("boxe.jpg")%>');">
+    <p>Boxe</p>
+  </div>
+
+  <div class="card-pro">
+    <div class= "buddies-by-sport">
+      <% @buddies_by_sport.each do |buddies_list| %>
+        <% buddies_list.buddy.sports.each do |buddy_sport| %>
+          <% if buddy_sport.name == "Boxe" %>
+            <%= link_to buddies_list_path(buddies_list) do %>
+              <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("crossfit.jpg")%>');">
+    <p>Crossfit</p>
+  </div>
+
+  <div class="card-pro">
+    <% @buddies_by_sport.each do |buddies_list| %>
+      <% buddies_list.buddy.sports.each do |buddy_sport| %>
+        <% if buddy_sport.name == "Crossfit" %>
+          <%= link_to buddies_list_path(buddies_list) do %>
             <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
           <% end %>
+        <% end %>
       <% end %>
+    <% end %>
   </div>
 
-<div>
- <a class="btn btn-voir" href="#">Voir plus</a>
-</div>
+  <div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("jump.jpg")%>');">
+    <p>Jump</p>
+  </div>
+
+  <div class="card-pro">
+    <% @buddies_by_sport.each do |buddies_list| %>
+      <% buddies_list.buddy.sports.each do |buddy_sport| %>
+        <% if buddy_sport.name == "Jump" %>
+          <%= link_to buddies_list_path(buddies_list) do %>
+            <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("cardio.jpg")%>');">
+    <p>Cardio</p>
+  </div>
+
+  <div class="card-pro">
+    <% @buddies_by_sport.each do |buddies_list| %>
+      <% buddies_list.buddy.sports.each do |buddy_sport| %>
+        <% if buddy_sport.name == "Cardio" %>
+          <%= link_to buddies_list_path(buddies_list) do %>
+            <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div>
+  <%= link_to "Découvrir les évènements", root_path, class: "btn btn-voir"%>
+  </div>
 </div>

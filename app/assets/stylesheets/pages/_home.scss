@@ -77,6 +77,8 @@
 
 .btn-primary {
   --bs-btn-bg: #506a7b;
+  border-radius: 10px;
+  margin-left: 8px;
 }
 
 .inscrit-card {
@@ -96,4 +98,8 @@ body {
 
 .favourite_budy {
   text-align-last: center;
+}
+
+.partenariat {
+  text-align: center;
 }
