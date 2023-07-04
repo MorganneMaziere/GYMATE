@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   #buddies
-  get "/buddies_lists", to: "buddies_lists#index"
-  get "buddies_lists/:id", to: "buddies_lists#show", as: :buddy
-  post "buddies_lists/:id", to: "buddies_lists#create", as: :create_buddy
-  patch "buddies_lists/:id", to: "buddies_lists#update"
+  # get "/buddies_lists", to: "buddies_lists#index"
+  # get "buddies_lists/:id", to: "buddies_lists#show", as: :buddy
+  # post "buddies_lists/:id", to: "buddies_lists#create", as: :create_buddy
+  # patch "buddies_lists/:id", to: "buddies_lists#update"
 
   get "dashboard", to: "pages#dashboard"
 
@@ -14,7 +14,13 @@ Rails.application.routes.draw do
     resources :bookings, except: [:destroy]
   end
 
+  resources :buddies_lists do
+    resources :reviews, only: %i[new create]
+  end
+
   resources :bookings, only: [:destroy]
+
+  resources :reviews, only: :destroy
 
   #bookings
   # get "bookings/:id", to: "bookings#show", as: :new_booking

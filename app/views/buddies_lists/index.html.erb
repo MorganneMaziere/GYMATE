@@ -37,7 +37,7 @@
  <h1 class="buddy_h1"><strong>TOUS</strong></h1>
   <div class="cardy">
     <% @buddies_lists.each do |buddies_list| %>
-      <%= link_to buddy_path(buddies_list) do %>
+      <%= link_to buddies_list_path(buddies_list) do %>
         <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
       <% end %>
     <% end %>
@@ -62,7 +62,7 @@
 <div class="card-pro">
  <div class= "buddies-by-sport">
     <% @buddies_lists.last(4).each do |buddies_list| %>
-      <%= link_to buddy_path(buddies_list) do %>
+      <%= link_to buddies_list_path(buddies_list) do %>
         <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
       <% end %>
     <% end %>
@@ -76,7 +76,7 @@
 <div class="card-pro">
   <div class= "buddies-by-sport">
     <% @buddies_lists.last(4).each do |buddies_list| %>
-      <%= link_to buddy_path(buddies_list) do %>
+      <%= link_to buddies_list_path(buddies_list) do %>
         <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
       <% end %>
     <% end %>
@@ -89,7 +89,7 @@
 </div>
   <div class="card-pro">
         <% @buddies_lists.last(4).each do |buddies_list| %>
-          <%= link_to buddy_path(buddies_list) do %>
+          <%= link_to buddies_list_path(buddies_list) do %>
             <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
           <% end %>
       <% end %>

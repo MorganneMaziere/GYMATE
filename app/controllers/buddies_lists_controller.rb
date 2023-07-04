@@ -1,7 +1,6 @@
 class BuddiesListsController < ApplicationController
   before_action :set_buddies_list, only: %i[show edit destroy update]
 
-
   def index
     @buddies_lists = current_user.buddies_lists
 
@@ -11,11 +10,13 @@ class BuddiesListsController < ApplicationController
     end
   end
 
-  def show
-    @events = []
+def show
+    @review = Review.new
+    @events = current_user.events
+    @reviews = []
 
-    current_user.bookings.each do |booking|
-      @events << booking.event
+    @buddies_list.reviews.each do |review|
+      @reviews << Review.find_by(id: review)
     end
   end
 
@@ -25,6 +26,8 @@ class BuddiesListsController < ApplicationController
 
   def create
     @buddies_list = BuddiesList.new(buddy_params)
+    @buddies_list.user = current_user
+
     if @buddies_list.save
       redirect_to @buddies_list, notice: 'Buddy was successfully created.'
     else
@@ -35,13 +38,12 @@ class BuddiesListsController < ApplicationController
   def edit; end
 
   def update
-    @buddies_list = BuddiesList.find(params[:id])
     if params[:status] == "like"
       @buddies_list.confirmed = true
     else
       @buddies_list.confirmed = false
     end
-    @buddies_list.save
+    @buddies_list.update
     # if @buddy.update(buddy_params)
     #   redirect_to @buddy, notice: 'Buddy was successfully updated.'
     # else
@@ -50,7 +52,7 @@ class BuddiesListsController < ApplicationController
   end
 
   def destroy
-    @buddy.destroy
+    @buddies_list.destroy
     redirect_to buddies_url, notice: 'Buddy was successfully destroyed.'
   end
 
