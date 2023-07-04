@@ -7,10 +7,8 @@
 }
 
 .home_h2 {
-  text-align: center;
-  margin-top: 4vmin;
-  margin-bottom: 4vmin;
-  font-weight: bold;
+  margin-top: 2vmin;
+  margin-bottom: 3vmin;
 }
 
 .event_card_home {
@@ -98,8 +96,53 @@ body {
 
 .favourite_budy {
   text-align-last: center;
+  margin-bottom: 30px;
 }
 
 .partenariat {
+  text-align: center;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.titre{
+  margin-left: 15px;
+}
+
+.banner2 {
+  background-size: cover;
+  background-position: center;
+  padding: 41px 0;
+}
+
+.banner2 h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner2 p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.container2{
   text-align: center;
 }
