@@ -3,6 +3,13 @@
   <div class="buddy-infos">
     <h2 class= "buddy-name"><strong><%= @buddies_list.buddy.first_name %></strong></h2>
     <p class="buddy-location"> <%= @buddies_list.buddy.location %></p>
+     <% if @buddies_list.chatroom %>
+      <%= link_to "Contactez-moi", buddies_list_chatroom_path(@buddies_list, @buddies_list.chatroom.id)  %>
+     <% else %>
+      <%= link_to buddies_list_chatrooms_path(@buddies_list), data: {turbo_method: :post} do %>
+          <h1>coucou</h1>
+      <% end %>
+    <% end %>
   </div>
   <div class="favorite" data-controller="favorite">
 
