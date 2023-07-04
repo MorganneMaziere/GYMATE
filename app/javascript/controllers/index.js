@@ -10,6 +10,9 @@ application.register("chatroom-subscription", ChatroomSubscriptionController)
 import FavoriteController from "./favorite_controller"
 application.register("favorite", FavoriteController)
 
+import FlatpickrController from "./flatpickr_controller"
+application.register("flatpickr", FlatpickrController)
+
 import FormSubmitController from "./form_submit_controller"
 application.register("form-submit", FormSubmitController)
 
