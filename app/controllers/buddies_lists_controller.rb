@@ -5,16 +5,6 @@ class BuddiesListsController < ApplicationController
   def index
     @buddies_lists = current_user.buddies_lists
 
-    # @buddies_by_sport = []
-
-    # @buddies_lists.each do |buddy_list|
-    #   current_user.sports.each do |sport|
-    #     if buddy_list.buddy.sports.include?(sport) && !@buddies_by_sport.include?(buddy)
-    #       @buddies_by_sport << buddy_list.buddy
-    #     end
-    #   end
-    # end
-
     @favorite_buddies = []
     @buddies_lists.where(confirmed: true).each do |buddies_list|
       @favorite_buddies << buddies_list
@@ -23,7 +13,7 @@ class BuddiesListsController < ApplicationController
 
   def show
     @events = []
-    
+
     current_user.bookings.each do |booking|
       @events << booking.event
     end
