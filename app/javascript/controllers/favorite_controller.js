@@ -3,19 +3,19 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="favorite"
 export default class extends Controller {
 
-  static targets = [ "like", "dislike" ]
+  // static targets = [ "like", "dislike" ]
 
   connect () {
     console.log("hello");
   }
 
   like() {
-    this.likeTarget.classList.add("d-none");
-    this.dislikeTarget.classList.remove("d-none");
+    document.querySelector("#like").classList.add("d-none");
+    document.querySelector("#dislike").classList.remove("d-none");
   }
 
   dislike() {
-    this.dislikeTarget.classList.add("d-none");
-    this.likeTarget.classList.remove("d-none");
+    document.querySelector("#dislike").classList.add("d-none");
+    document.querySelector("#like").classList.remove("d-none");
   }
 }
