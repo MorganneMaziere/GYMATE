@@ -50,7 +50,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    redirect_to root_path, notice: 'Event was successfully destroyed.'
+    redirect_to events_path, notice: 'Event was successfully destroyed.'
   end
 
   private

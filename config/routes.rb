@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   resources :buddies_lists do
     resources :reviews, only: %i[new create]
+    resources :chatrooms, only:  %i[show create] do
+      resources :messages, only: :create
+    end
   end
 
   resources :bookings, only: [:destroy]
