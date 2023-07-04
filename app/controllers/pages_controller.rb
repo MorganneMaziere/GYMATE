@@ -13,7 +13,7 @@ class PagesController < ApplicationController
     @buddies_lists = current_user.buddies_lists
     @favorite_buddies = []
     @buddies_lists.where(confirmed: true).each do |buddies_list|
-      @favorite_buddies << buddies_list.buddy
+      @favorite_buddies << buddies_list
     end
   end
 
