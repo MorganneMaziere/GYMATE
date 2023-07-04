@@ -17,6 +17,14 @@ class BuddiesListsController < ApplicationController
     @favorite_buddies = []
     @buddies_lists.where(confirmed: true).each do |buddies_list|
       @favorite_buddies << buddies_list
+      @query = params[:query]
+    end
+
+    if params[:query].present?
+      @buddies_lists = []
+      current_user.buddies_lists.each do |buddies_list|
+        @buddies_lists << buddies_list if buddies_list.buddy.first_name == "Charlotte"
+      end
     end
   end
 
