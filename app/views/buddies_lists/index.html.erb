@@ -12,7 +12,7 @@
         <%= text_field_tag :query,
               params[:query],
               class: "form-control",
-              placeholder: "Type a keyword"
+              placeholder: "Je recherche un buddy..."
           %>
         <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
     <% end %>
@@ -22,7 +22,7 @@
   <div>
     <h1 class= "buddy_h1">MES FAVORIS</h1>
     <% @favorite_buddies.each do |buddies_list| %>
-      <%= link_to buddy_path(buddies_list) do %>
+      <%= link_to buddies_list_path(buddies_list) do %>
         <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
       <% end %>
     <% end %>
@@ -46,72 +46,95 @@
     <%# <% end %>
   <%# </div> %>
 
-<h1 class= "buddy_h1"> Par sport</h1>
+  <h1 class= "buddy_h1"> Par sport</h1>
 
 
-<div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("yoga.jpg")%>');">
-  <p>Yoga</p>
-</div>
-
-<div class="card-pro">
- <div class= "buddies-by-sport">
-    <% @buddies_lists.last(4).each do |buddies_list| %>
-      <%= link_to buddies_list_path(buddies_list) do %>
-        <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
-      <% end %>
-    <% end %>
+  <div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("yoga.jpg")%>');">
+    <p>Yoga</p>
   </div>
-</div>
 
-<div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("boxe.jpg")%>');">
-  <p>Boxe</p>
-</div>
-
-<div class="card-pro">
-  <div class= "buddies-by-sport">
-    <% @buddies_lists.last(4).each do |buddies_list| %>
-      <%= link_to buddies_list_path(buddies_list) do %>
-        <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-
-
-<div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("crossfit.jpg")%>');">
-  <p>Crossfit</p>
-</div>
   <div class="card-pro">
-        <% @buddies_lists.last(4).each do |buddies_list| %>
+  <div class= "buddies-by-sport">
+      <% @buddies_by_sport.each do |buddies_list| %>
+        <% buddies_list.buddy.sports.each do |buddy_sport| %>
+          <% if buddy_sport.name == "Yoga" %>
+            <%= link_to buddies_list_path(buddies_list) do %>
+              <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("boxe.jpg")%>');">
+    <p>Boxe</p>
+  </div>
+
+  <div class="card-pro">
+    <div class= "buddies-by-sport">
+      <% @buddies_by_sport.each do |buddies_list| %>
+        <% buddies_list.buddy.sports.each do |buddy_sport| %>
+          <% if buddy_sport.name == "Boxe" %>
+            <%= link_to buddies_list_path(buddies_list) do %>
+              <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("crossfit.jpg")%>');">
+    <p>Crossfit</p>
+  </div>
+
+  <div class="card-pro">
+    <% @buddies_by_sport.each do |buddies_list| %>
+      <% buddies_list.buddy.sports.each do |buddy_sport| %>
+        <% if buddy_sport.name == "Crossfit" %>
           <%= link_to buddies_list_path(buddies_list) do %>
             <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
           <% end %>
+        <% end %>
       <% end %>
+    <% end %>
   </div>
 
   <div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("jump.jpg")%>');">
-  <p>Jump</p>
-</div>
+    <p>Jump</p>
+  </div>
+
   <div class="card-pro">
-        <% @buddies_lists.last(4).each do |buddies_list| %>
-          <%= link_to buddy_path(buddies_list) do %>
+    <% @buddies_by_sport.each do |buddies_list| %>
+      <% buddies_list.buddy.sports.each do |buddy_sport| %>
+        <% if buddy_sport.name == "Jump" %>
+          <%= link_to buddies_list_path(buddies_list) do %>
             <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
           <% end %>
+        <% end %>
       <% end %>
+    <% end %>
   </div>
 
   <div class="cardou" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("cardio.jpg")%>');">
-  <p>Cardio</p>
-</div>
-  <div class="card-pro">
-        <% @buddies_lists.last(4).each do |buddies_list| %>
-          <%= link_to buddy_path(buddies_list) do %>
-            <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
-          <% end %>
-      <% end %>
+    <p>Cardio</p>
   </div>
 
-<div>
- <%= link_to "Découvrir les évènements", root_path, class: "btn btn-voir"%>
-</div>
+  <div class="card-pro">
+    <% @buddies_by_sport.each do |buddies_list| %>
+      <% buddies_list.buddy.sports.each do |buddy_sport| %>
+        <% if buddy_sport.name == "Cardio" %>
+          <%= link_to buddies_list_path(buddies_list) do %>
+            <% image_tag(buddies_list.buddy.profilepic, class: "avatar_2") %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div>
+  <%= link_to "Découvrir les évènements", root_path, class: "btn btn-voir"%>
+  </div>
 </div>

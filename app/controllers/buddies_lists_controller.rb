@@ -4,6 +4,16 @@ class BuddiesListsController < ApplicationController
   def index
     @buddies_lists = current_user.buddies_lists
 
+    @buddies_by_sport = []
+
+    @buddies_lists.each do |buddy_list|
+      current_user.sports.each do |sport|
+        if buddy_list.buddy.sports.include?(sport) && !@buddies_by_sport.include?(buddy_list)
+          @buddies_by_sport << buddy_list
+        end
+      end
+    end
+
     @favorite_buddies = []
     @buddies_lists.where(confirmed: true).each do |buddies_list|
       @favorite_buddies << buddies_list
@@ -18,7 +28,7 @@ class BuddiesListsController < ApplicationController
     end
   end
 
-def show
+  def show
     @review = Review.new
     @events = current_user.events
     @reviews = []
@@ -51,7 +61,7 @@ def show
     else
       @buddies_list.confirmed = false
     end
-    @buddies_list.update
+    @buddies_list.save
     # if @buddy.update(buddy_params)
     #   redirect_to @buddy, notice: 'Buddy was successfully updated.'
     # else

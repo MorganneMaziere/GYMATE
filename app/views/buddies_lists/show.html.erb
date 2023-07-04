@@ -7,18 +7,18 @@
   <div class="favorite" data-controller="favorite">
 
     <% if @buddies_list.confirmed == true %>
-      <%= button_to buddies_list_path(@buddies_list), params: { status: "like" }, method: :patch, class: 'btn btn-accept' do %>
-        <i class="fa-regular fa-heart like d-none fa-2xl" data-action="click->favorite#like" data-favorite-target="like"></i>
+      <%= button_to buddies_list_path(@buddies_list), params: { status: "like" }, method: :patch, class: 'btn btn-accept d-none', id: "like" do %>
+        <i class="fa-regular fa-heart like fa-2xl" data-action="click->favorite#like" ></i>
       <% end %>
-      <%= button_to buddies_list_path(@buddies_list), params: { status: "dislike" }, method: :patch, class: 'btn btn-accept' do %>
-        <i class="fa-solid fa-heart dislike fa-2xl" data-action="click->favorite#dislike" data-favorite-target="dislike"></i>
+      <%= button_to buddies_list_path(@buddies_list), params: { status: "dislike" }, method: :patch, class: 'btn btn-accept', id: "dislike" do %>
+        <i class="fa-solid fa-heart dislike fa-2xl" data-action="click->favorite#dislike"></i>
       <% end %>
     <% elsif @buddies_list.confirmed == false || @buddies_list.confirmed.nil? %>
-      <%= button_to buddies_list_path(@buddies_list), params: { status: "like" }, method: :patch, class: 'btn btn-accept' do %>
-        <i class="fa-regular fa-heart like fa-2xl" data-action="click->favorite#like" data-favorite-target="like"></i>
+      <%= button_to buddies_list_path(@buddies_list), params: { status: "like" }, method: :patch, class: 'btn btn-accept', id: "like" do %>
+        <i class="fa-regular fa-heart like fa-2xl" data-action="click->favorite#like" ></i>
       <% end %>
-      <%= button_to buddies_list_path(@buddies_list), params: { status: "dislike" }, method: :patch, class: 'btn btn-accept' do %>
-        <i class="fa-solid fa-heart dislike d-none fa-2xl" data-action="click->favorite#dislike" data-favorite-target="dislike"></i>
+      <%= button_to buddies_list_path(@buddies_list), params: { status: "dislike" }, method: :patch, class: 'btn btn-accept d-none', id: "dislike" do %>
+        <i class="fa-solid fa-heart dislike fa-2xl" data-action="click->favorite#dislike"></i>
       <% end %>
     <% end %>
   </div>

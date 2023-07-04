@@ -62,7 +62,13 @@
 <div style="padding: 4vmin; text-align: center;">
 <%# <%= link_to "Je m'inscris", event_bookings_path(@booking) class="btn btn-flat" %>
 <%= simple_form_for [@event, @booking] do |f|%>
-  <%= f.submit "Je m'inscris", class: "btn btn-flat"%>
+ <% if @event.users.include?(current_user) %>
+          <%= link_to "Me désinscrire", booking_path(@booking_to_destroy), class: "btn btn-flat", data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sur de vouloir vous désinscrire?" }  %>
+        <% else %>
+      <%= simple_form_for [@event, @booking] do |f|%>
+      <%= f.submit "Je m'inscris", class: "btn btn-flat"%>
+        <% end %>
+      <% end %>
 <% end %>
 
 <%= link_to "Supprimer mon événement", event_path(@event), class: "btn btn-flat", data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sur de vouloir supprimer cet événement?" }  %>
