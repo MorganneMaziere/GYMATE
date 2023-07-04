@@ -1,4 +1,4 @@
-<h1 class="home_h1">Bienvenue <%= @user.first_name %> 💪</h1>
+<h1 class="home_h1">Bienvenue <%= @user.first_name %> 💪🏼 </h1>
 
 <div class="container_home">
   <div class="row justify-content-center">
@@ -17,7 +17,7 @@
 
 
 <div class="favourite_budy">
-  <h2 class="home_h2">❤️ Mes Buddys ❤️</h2>
+  <h2 class="home_h2"> Mes Buddys ❤️ </h2>
       <% @favorite_buddies.each do |buddies_list| %>
       <%= link_to buddy_path(buddies_list) do %>
         <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
@@ -27,7 +27,7 @@
 </div>
 
 <div class="container_home">
-  <h2 class="home_h2">🗓️ Les événements à venir 🗓️</h2>
+  <h2 class="home_h2">Les événements à venir...</h2>
 </div>
 
 <div class="calendar_cards">
