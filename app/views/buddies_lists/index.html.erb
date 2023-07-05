@@ -2,7 +2,8 @@
   <%# <%= user.email %>
   <%# <%= link_to "buddy", buddy_path(user)%>
 <%# <% end %>
-<div style="height: 30px;"></div>
+
+<div style="height: 40px;"></div>
 <div>
   <h1 class= "buddy_h1"> MES GYMATES</h1>
 </div>
@@ -21,6 +22,7 @@
 <div class= "buddies-favorite" style="text-align: center;">
   <div>
     <h1 class= "buddy_h1">MES FAVORIS</h1>
+    <div class="cardy">
       <% if @favorite_buddies.empty? %>
         Vous n'avez pas encore de buddy favoris !
       <% else %>
@@ -30,6 +32,7 @@
           <% end %>
         <% end %>
       <% end %>
+      </div>
   </div>
 
  <h1 class="buddy_h1"><strong>TOUS</strong></h1>
