@@ -27,8 +27,8 @@ puts 'finished!'
 
 # buddy
 puts 'buddy creation'
-BuddiesList.create!(user: morganne, buddy: charlotte)
-BuddiesList.create!(user: morganne, buddy: anouk)
+bd1 = BuddiesList.create!(user: morganne, buddy: charlotte)
+bd2 = BuddiesList.create!(user: morganne, buddy: anouk)
 BuddiesList.create!(user: morganne, buddy: jeanloup)
 BuddiesList.create!(user: morganne, buddy: gabriel)
 BuddiesList.create!(user: morganne, buddy: gaspard)
@@ -129,3 +129,8 @@ booking3 = Booking.create!(user: charlotte, event: event3)
 booking5 = Booking.create!(user: charlotte, event: event5)
 
 puts 'finished'
+
+puts "chatroom"
+Chatroom.create!(buddies_list: bd1)
+Chatroom.create!(buddies_list: bd2)
+puts "finished"

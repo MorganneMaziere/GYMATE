@@ -1,4 +1,9 @@
-<h1 class="home_h1">Bienvenue <%= @user.first_name %> 💪🏼 </h1>
+<div class="banner2" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_url ("banner.png")%>');">
+  <div class="container2">
+    <h1>Bienvenue sur GYMATE <strong><%= @user.first_name %></strong> !</h1>
+    <p>L'application qui te trouve un partenaire de sport !</p>
+  </div>
+</div>
 
 <div class="container_home">
   <div class="row justify-content-center">
@@ -17,13 +22,16 @@
 
 
 <div class="favourite_budy">
-  <h2 class="home_h2"> Mes Buddys ❤️ </h2>
-      <% @favorite_buddies.each do |buddies_list| %>
-      <%= link_to buddies_list_path(buddies_list) do %>
-        <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
+  <h2 class="home_h2"> Mes GYMATES </h2>
+         <% if @favorite_buddies.empty? %>
+        Vous n'avez pas encore de buddy favoris !
+      <% else %>
+        <% @favorite_buddies.each do |buddies_list| %>
+          <%= link_to buddies_list_path(buddies_list) do %>
+            <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
+          <% end %>
+        <% end %>
       <% end %>
-    <% end %>
-
 </div>
 
 <div class="container_home">
@@ -66,8 +74,11 @@
 
 <div style="text-align: center; padding: 3vmin;"> <%= link_to "Créer un événement", new_event_path, class: "btn_inscription"%></div>
 
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("ban.png")%>');">
+ <div class="titre">Ils nous font confiance</div>
+
+
 <div class="partnership">
-  <h2 class="home_h2">Ils nous font confiance</h2>
   <br>
   <div class= "partenariat">
 <img src="https://storage.googleapis.com/wizville-public-eu/uploads/trustville_preference/logo_picture/2799/LOGO_FITNESS_PARK_GREY_2020_FR.png">
@@ -75,4 +86,5 @@
 <img src="https://www.volvic-vvx.com/wp-content/uploads/2023/03/KEEPCOOL-LOGO-NOIR.png" alt="keepcool">
   </div>
 <br>
+</div>
   </div>
