@@ -4,14 +4,14 @@
   <div class="buddy-infos">
     <h2 class= "buddy-name"><strong><%= @buddies_list.buddy.first_name %></strong></h2>
     <p class="buddy-location"> <%= @buddies_list.buddy.location %></p>
-     <% if @buddies_list.chatroom %>
+    <% if @buddies_list.chatroom %>
       <%= link_to "Continuer une discussion", buddies_list_chatroom_path(@buddies_list, @buddies_list.chatroom.id), class: "btn_discussion"  %>
-     <% else %>
+    <% else %>
       <%= link_to "Commencer une discussion", buddies_list_chatrooms_path(@buddies_list), data: {turbo_method: :post}, class: "btn_discussion" %>
     <% end %>
   </div>
-  <div class="favorite" data-controller="favorite">
 
+  <div class="favorite" data-controller="favorite">
     <% if @buddies_list.confirmed == true %>
       <%= button_to buddies_list_path(@buddies_list), params: { status: "like" }, method: :patch, class: 'btn btn-accept d-none', id: "like" do %>
         <i class="fa-regular fa-heart like fa-2xl" data-action="click->favorite#like" ></i>
@@ -38,10 +38,10 @@
 
 <div class="rev">
   <label class="label" for="user"><strong>Les sports pratiqués par : <%= @buddies_list.buddy.first_name %></strong></label>
- <div class="d-flex">
-  <% @buddies_list.buddy.sports.each do |sport| %>
-      <div class="purple-badge"> <%= sport.name %></div>
-     <% end %>
+  <div class="d-flex">
+    <% @buddies_list.buddy.sports.each do |sport| %>
+      <div class="purple-badge"><%= sport.name %></div>
+    <% end %>
   </div>
 </div>
 
@@ -53,44 +53,39 @@
 <%# </div> %>
 
 <div class=avisbud>
-
-
-<div class="reviews">
-  <h3 style="text-align-last: center;">Commentaires :</h3>
-  <% if @buddies_list.reviews.empty? %>
-    <small><em class="text-muted">Soyez le premier à laisser un commentaire!</em></small>
-  <% end %>
-  <% @buddies_list.reviews.each do |review|  %>
-    <% review.rating.times do %>
-      <i class="fas fa-star star-yellow"></i>
+  <div class="reviews">
+    <h3 style="text-align-last: center;"> Avis :</h3>
+    <% if @buddies_list.reviews.empty? %>
+      <small><em class="text-muted">Soyez le premier à laisser un commentaire!</em></small>
     <% end %>
-    <p> <i class="fa-solid fa-quote-left"> </i> <%= review.comment %> <i class="fa-solid fa-circle", style="font-size: 5px; color: grey"></i> <em>par <%= review.user.first_name %>
-        <i class="fa-solid fa-circle", style="font-size: 5px; color: grey"></i> <small><em><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></p>
-      <%= link_to review_path(review), class: 'trash',
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?" } do%>
+    <% @buddies_list.reviews.each do |review|  %>
+      <% review.rating.times do %>
+        <i class="fas fa-star star-yellow"></i>
+      <% end %>
+      <p>
+        <i class="fa-solid fa-quote-left"> </i> <%= review.comment %> <i class="fa-solid fa-circle", style="font-size: 5px; color: grey"></i> <em>par <%= review.user.first_name %>
+        <i class="fa-solid fa-circle", style="font-size: 5px; color: grey"></i> <small><em><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em>
+      </p>
+      <%= link_to review_path(review), class: 'trash', data: {turbo_method: :delete, turbo_confirm: "Êtes vous sûr?" } do%>
         <i class="fa-regular fa-trash-can"></i>
-        <% end %>
-  <% end %>
-</div>
-
-<div class="container new">
-  <div class="container title">
-    <h1>Ajoutez un commentaire</h1>
-  </div>
-  <div class="container form">
-    <%= simple_form_for [@buddies_list, @review], data: {turbo: "false"} do |f| %>
-      <%= f.input :comment, label: "commentaire" %>
-      <%= f.input :rating, as: :select, collection: (1..5), required: true, promt: "Notez votre experience", input_html: {data: { controller: "star-rating"} }  %>
-      <%= f.submit 'Commentez', class:'btn-inscription'%>
+      <% end %>
     <% end %>
   </div>
+
+
+  <div class="container new">
+    <div class="container form">
+      <%= simple_form_for [@buddies_list, @review], data: {turbo: "false"} do |f| %>
+        <%= f.input :comment, label: "Ajouter un commentaire" %>
+        <%= f.input :rating, label:"Ajouter une note", as: :select, collection: (1..5), required: true, promt: "Notez votre experience", input_html: {data: { controller: "star-rating"} }  %>
+        <%= f.submit 'Commentez', class:'btn-inscription'%>
+      <% end %>
+    </div>
+  </div>
 </div>
-<%# buddies_list_reviews_path %>
-
-
 
 <div class="container_home">
-  <h2 class="home_h2">🗓️ Les événements à venir 🗓️</h2>
+  <h2 class="home_2">Les événements à venir : </h2>
   <% if @events.empty? %>
     <p>Vous n'êtes inscrit à aucun événement</p>
   <% else %>
@@ -112,8 +107,8 @@
 </div>
 
 </div>
-   <div class ="btn btn-voirevents" >  <%= link_to "Voir tous les évènements", root_path %>
-  </div>
+  <div class ="btn btn-voirevents" >  <%= link_to "Voir tous les évènements", root_path %>
+</div>
 
 
 
