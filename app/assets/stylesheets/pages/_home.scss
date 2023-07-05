@@ -9,6 +9,8 @@
 .home_h2 {
   margin-top: 2vmin;
   margin-bottom: 3vmin;
+  text-shadow:  white 0.006em 0.006em 0.007em;
+  text-align: center;
 }
 
 .event_card_home {
@@ -145,4 +147,12 @@ body {
 
 .container2{
   text-align: center;
+}
+
+.bienvenue h1{
+  font-size: 15px;
+}
+
+.bienvenue p{
+  font-size: 9px;
 }
