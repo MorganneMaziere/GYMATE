@@ -2,12 +2,12 @@
   <%# <%= user.email %>
   <%# <%= link_to "buddy", buddy_path(user)%>
 <%# <% end %>
-
+<div style="height: 30px;"></div>
 <div>
   <h1 class= "buddy_h1"> MES GYMATES</h1>
 </div>
 
-  <div class="search-bar">
+  <div class="search-bar" style="padding: 4vmin; margin-top: 0px !important;">
     <%= form_with url: buddies_lists_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
               params[:query],
@@ -21,11 +21,15 @@
 <div class= "buddies-favorite" style="text-align: center;">
   <div>
     <h1 class= "buddy_h1">MES FAVORIS</h1>
-    <% @favorite_buddies.each do |buddies_list| %>
-      <%= link_to buddies_list_path(buddies_list) do %>
-        <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
+      <% if @favorite_buddies.empty? %>
+        Vous n'avez pas encore de buddy favoris !
+      <% else %>
+        <% @favorite_buddies.each do |buddies_list| %>
+          <%= link_to buddies_list_path(buddies_list) do %>
+            <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
+          <% end %>
+        <% end %>
       <% end %>
-    <% end %>
   </div>
 
  <h1 class="buddy_h1"><strong>TOUS</strong></h1>
