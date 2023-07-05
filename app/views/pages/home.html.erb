@@ -23,12 +23,15 @@
 
 <div class="favourite_budy">
   <h2 class="home_h2"> Mes GYMATES </h2>
-      <% @favorite_buddies.each do |buddies_list| %>
-      <%= link_to buddies_list_path(buddies_list) do %>
-        <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
+         <% if @favorite_buddies.empty? %>
+        Vous n'avez pas encore de buddy favoris !
+      <% else %>
+        <% @favorite_buddies.each do |buddies_list| %>
+          <%= link_to buddies_list_path(buddies_list) do %>
+            <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
+          <% end %>
+        <% end %>
       <% end %>
-    <% end %>
-
 </div>
 
 <div class="container_home">

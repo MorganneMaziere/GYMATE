@@ -8,7 +8,6 @@
 
 .buddy-card{
   overflow: hidden;
-  height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -96,7 +95,9 @@ object-fit: cover;
 
 .favorite{
   margin-left: 50px;
-
+  position: absolute;
+  right: 15px;
+  top: 150px;
 }
 
 .btn-voirevents {
@@ -185,4 +186,33 @@ object-fit: cover;
 .d-flex{
   margin-top: 10px;
   justify-content: center;
+}
+
+.btn_discussion {
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 1vmin;
+  color: #fff;
+  background: #506a7b;
+  line-height: 1.15;
+  font-size: 16px;
+  text-decoration: none;
+  text-align: center;
+  width: max-content;
+  &:hover {
+      transition: all .1s ease;
+      box-shadow: 0 0 0 0 #fff, 0 0 0 3px #000000;
+  }
+  &:active {
+    color: white;
+  }
+  :focus {
+    color: white;
+  }
+}
+
+.buddy-infos {
+  position: relative;
 }
