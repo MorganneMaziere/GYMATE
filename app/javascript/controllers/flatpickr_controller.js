@@ -6,6 +6,7 @@ export default class extends Controller {
   static targets = [ "eventDate" ]
 
   connect() {
+    console.log("hello");
     flatpickr(this.eventDateTarget, {
       altInput: true,
       dateFormat: "Y-m-d",
