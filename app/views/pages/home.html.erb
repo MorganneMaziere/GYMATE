@@ -1,5 +1,5 @@
 <body class="hide-navbar">
-<div class="banner2" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_url ("banner.png")%>');">
+<div class="banner2" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_url ("banny.png")%>');">
   <div class="container2">
     <h1 class="bienvenue">Bienvenue sur GYMATE <strong><%= @user.first_name %></strong> !</h1>
     <p>L'application qui te trouve un partenaire de sport !</p>
@@ -24,6 +24,7 @@
 
 <div class="favourite_budy">
   <h2 class="home_h2"> Mes GYMATES </h2>
+<div class="cardy">
          <% if @favorite_buddies.empty? %>
         Vous n'avez pas encore de buddy favoris !
       <% else %>
@@ -33,6 +34,7 @@
           <% end %>
         <% end %>
       <% end %>
+</div>
 </div>
 
 <div class="container_home">
