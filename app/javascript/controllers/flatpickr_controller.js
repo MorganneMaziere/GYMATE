@@ -7,10 +7,11 @@ export default class extends Controller {
 
   connect() {
     flatpickr(this.eventDateTarget, {
-      enableTime: true,
-      minDate: "today",
+      altInput: true,
+      dateFormat: "Y-m-d",
       altFormat: "F j, Y",
-      dateFormat: "Y-m-d"
+      minDate: "today",
+      noCalendar: false
     });
   }
 }
