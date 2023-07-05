@@ -20,15 +20,16 @@
   </div>
 </div>
 
-
-<div class="favourite_budy">
+<div class="container_home">
   <h2 class="home_h2"> Mes GYMATES </h2>
-      <% @favorite_buddies.each do |buddies_list| %>
-      <%= link_to buddies_list_path(buddies_list) do %>
-        <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
+  <div class="favourite_budy">
+        <% @favorite_buddies.each do |buddies_list| %>
+        <%= link_to buddies_list_path(buddies_list) do %>
+          <% image_tag(buddies_list.buddy.profilepic, class: "avatar") %>
+        <% end %>
       <% end %>
-    <% end %>
 
+  </div>
 </div>
 
 <div class="container_home">
