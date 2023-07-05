@@ -1,10 +1,15 @@
+<div style="height: 30px;"></div>
 <h1 class="h1-form">Créer un événement</h1>
 <div class="container", style="padding: 4vmin;">
   <%= simple_form_for @event, data: { controller: 'flatpickr' } do |f| %>
     <%= f.input :title, label: "Titre"%>
     <%= f.input :description %>
     <%= f.input :location, label:"Ville" %>
-    <%= f.input :event_date, as: :string, label: "Date de l'évènement", input_html: { data: { flatpickr_target: "eventDate" } } %>
+    <%= f.input :event_date, as: :string, label: "Date de l'évènement",
+                wrapper_html: { class: "mb-4" },
+                label_html: { class: "form-label text-secondary fw-bold" },
+                input_html: { data: { controller: "flatpickr" } },
+                input_html: { data: { flatpickr_target: "eventDate" } } %>
     <%= f.input :starting_hour, label:"Heure de début" %>
     <%= f.input :ending_hour, label:"Heure de fin" %>
     <%= f.input :sport_id, collection: @sports, prompt: 'Selectionner un sport', label: "Sport" %>

@@ -9,6 +9,8 @@
 .home_h2 {
   margin-top: 2vmin;
   margin-bottom: 3vmin;
+  text-shadow:  white 0.006em 0.006em 0.007em;
+  text-align: center;
 }
 
 .event_card_home {
@@ -133,12 +135,13 @@ body {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .banner2 p {
-  font-size: 20px;
+  font-size: 18px;
+  font-style: italic;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -146,4 +149,12 @@ body {
 
 .container2{
   text-align: center;
+}
+
+.bienvenue{
+  font-size: 10px;
+}
+
+.bienvenue p{
+  font-size: 9px;
 }
