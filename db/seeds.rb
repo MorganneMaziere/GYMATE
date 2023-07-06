@@ -29,11 +29,11 @@ puts 'finished!'
 puts 'buddy creation'
 bd1 = BuddiesList.create!(user: morganne, buddy: charlotte)
 bd2 = BuddiesList.create!(user: morganne, buddy: anouk)
-BuddiesList.create!(user: morganne, buddy: jeanloup)
-BuddiesList.create!(user: morganne, buddy: gabriel)
-BuddiesList.create!(user: morganne, buddy: gaspard)
-BuddiesList.create!(user: morganne, buddy: alice)
-BuddiesList.create!(user: morganne, buddy: clara)
+bd3 = BuddiesList.create!(user: morganne, buddy: jeanloup)
+bd4 = BuddiesList.create!(user: morganne, buddy: gabriel)
+bd5 = BuddiesList.create!(user: morganne, buddy: gaspard)
+bd6 = BuddiesList.create!(user: morganne, buddy: alice)
+bd7 = BuddiesList.create!(user: morganne, buddy: clara)
 puts 'finished!'
 
 

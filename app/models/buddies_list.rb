@@ -3,6 +3,7 @@ class BuddiesList < ApplicationRecord
   belongs_to :buddy, class_name: "User"
   has_many :reviews, dependent: :destroy
   has_one :chatroom, dependent: :destroy
+  # after_create :create_chatroom
 
   def self.reacted?(id1, id2)
     case1 = !BuddiesList.where(user_id: id1, buddy_id: id2).empty?
@@ -23,4 +24,9 @@ class BuddiesList < ApplicationRecord
       BuddiesList.where(user_id: id1, buddy_id: id2, confirmed: true)[0].id
     end
   end
+
+  # def create_chatroom
+  #   Chatroom.create(buddies_list: self)
+  # end
+
 end
