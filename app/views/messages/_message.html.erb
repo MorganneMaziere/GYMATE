@@ -1,7 +1,12 @@
-<div id="message-<%= message.id %>">
-  <small>
-    <strong><%= message.user.nickname %></strong>
-    <i><%= message.created_at.strftime("%d/%m/%Y à %l:%M") %></i>
-  </small>
-  <p class= "card-right"><%= message.content %></p>
-</div>
+<%# <div class=" <%= author ? 'justify-content-end' : 'justify-content-start' %>
+  <div class="message-row d-flex <%= author ? 'sender-style' : 'receiver-style' %>">
+
+    <div id="message-<%= message.id %>">
+      <small>
+        <strong><%= message.user.nickname %></strong>
+        <i><%= message.created_at.strftime("%d/%m/%Y à %l:%M") %></i>
+      </small>
+      <p class= "card-right"><%= message.content %></p>
+    </div>
+  </div>
+<%# </div>s %>
