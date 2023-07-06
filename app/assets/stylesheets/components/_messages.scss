@@ -28,6 +28,11 @@
   }
 }
 
+.chatroom h1{
+  padding: 27px;
+  text-align: center;
+}
+
 .form-control{
   border-radius: 20px;
 }
@@ -41,14 +46,25 @@
 }
 
 .sender-style {
-  background-color: lightcoral;
+  background-color: lightblue;
+  margin-left:auto;
+  border-bottom-right-radius: 6px 2px;
+  border-radius: 20px;
+  border-top-right-radius: 0px;
 }
 
 .receiver-style {
-  background-color: lightblue;
+  background-color: lightgrey;
+  margin-right:auto;
+  border-radius: 20px;
+  border-top-left-radius: 0px;
 }
 
 .message-row {
   margin-bottom: 10px;
   padding: 8px;
+}
+
+.chatname{
+  font-size: 14px;
 }
