@@ -1,32 +1,13 @@
-.card-product {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
+.card-p {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
   align-items: center;
+  grid-column-gap: 5px;
 }
 
-.avatar {
-  height: 100%;
-  width: 120px;
+.card-p img.avatar {
+  height: 100px; /* Ajustez la hauteur de l'image selon vos besoins */
+  width: 100px; /* Ajustez la largeur de l'image selon vos besoins */
   object-fit: cover;
-}
-
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product {
-  padding: 16px;
+  margin-right: 10px; /* Espacement entre l'image et le texte */
 }
