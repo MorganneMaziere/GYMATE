@@ -28,6 +28,7 @@ puts 'finished!'
 # buddy
 puts 'buddy creation'
 bd1 = BuddiesList.create!(user: morganne, buddy: charlotte)
+bd8 = BuddiesList.create!(user: charlotte, buddy: morganne)
 bd2 = BuddiesList.create!(user: morganne, buddy: anouk)
 bd3 = BuddiesList.create!(user: morganne, buddy: jeanloup)
 bd4 = BuddiesList.create!(user: morganne, buddy: gabriel)
