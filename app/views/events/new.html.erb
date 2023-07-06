@@ -7,7 +7,7 @@
     <%= f.input :location, label:"Ville" %>
     <%= f.input :event_date, as: :string, label: "Date de l'évènement",
                 wrapper_html: { class: "mb-4" },
-                label_html: { class: "form-label text-secondary fw-bold" },
+                label_html: { class: "form-label" },
                 input_html: { data: { controller: "flatpickr" } },
                 input_html: { data: { flatpickr_target: "eventDate" } } %>
     <%= f.input :starting_hour, label:"Heure de début" %>
