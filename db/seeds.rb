@@ -119,7 +119,7 @@ puts 'finished'
 
 # booking
 puts 'booking creation'
-booking1 = Booking.create!(user: morganne, event: event1)
+booking1 = Booking.create!(user: gabriel, event: event1)
 
 booking2 = Booking.create!(user: anouk, event: event6)
 
@@ -131,8 +131,8 @@ booking5 = Booking.create!(user: charlotte, event: event5)
 
 puts 'finished'
 
-puts "chatroom"
+puts 'chatroom'
 Chatroom.create!(buddies_list: bd1)
 Chatroom.create!(buddies_list: bd8)
 
-puts "finished"
+puts 'finished'
