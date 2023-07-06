@@ -133,5 +133,6 @@ puts 'finished'
 
 puts "chatroom"
 Chatroom.create!(buddies_list: bd1)
-Chatroom.create!(buddies_list: bd2)
+Chatroom.create!(buddies_list: bd8)
+
 puts "finished"
