@@ -135,9 +135,25 @@
 
 #query.form-control{
   border-radius: 10px;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .btn{
   margin-right: 4px;
+}
+
+.no_buddy {
+  /* overflow: hidden; */
+  background: #c5000054;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /* display: block; */
+  margin: 1vmin;
+  height: 35px;
+  justify-content: center;
+  align-content: center;
 }
