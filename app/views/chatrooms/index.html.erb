@@ -1,0 +1,21 @@
+<div style="height: 40px;"></div>
+
+<h1 class= "buddy_h1">MES CONVERSATIONS</h1>
+<div class="cardy">
+  <% if @chatrooms.empty? %>
+    Vous n'avez pas encore de conversation en cours !
+   <% else %>
+    <% @chatrooms.each do |chatroom| %>
+      <% buddies_list = chatroom.buddies_list %>
+      <p>discussion  avec <%= chatroom.buddies_list.buddy == current_user ?  chatroom.buddies_list.user.first_name : chatroom.buddies_list.buddy.first_name %></p>
+      <%= link_to buddies_list_chatroom_path(buddies_list, chatroom) do %>
+        <% image_tag(chatroom.buddies_list.buddy.profilepic, class: "avatar") %>
+       <% end %>
+        <% if chatroom.messages.exists? %>
+            <%= chatroom.messages.last.content %>  <%= chatroom.messages.last.created_at.strftime("%d/%m/%Y à %l:%M") %>
+        <% else %>
+        La discussion n'a pas encore commencé
+        <% end %>
+    <% end %>
+  <% end %>
+</div>

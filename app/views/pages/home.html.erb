@@ -1,3 +1,4 @@
+<body class="hide-navbar">
 <div class="banner2" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_url ("banny.png")%>');">
   <div class="container2">
     <h1 class="bienvenue">Bienvenue sur GYMATE <strong><%= @user.first_name %></strong> !</h1>
@@ -5,8 +6,8 @@
   </div>
 </div>
 
-<div class="container_home">
-  <div class="row justify-content-center">
+<div class="searchbar">
+  <div class="d-flex justify-content-center">
     <div class="col-sm-8 my-3">
       <%= form_with url: root_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
@@ -41,10 +42,10 @@
           <% end %>
         <% end %>
       <% end %>
-</div>
+  </div>
 </div>
 
-<div class="container_home">
+<div class="">
   <h2 class="home_h2">Les événements à venir...</h2>
 </div>
 
@@ -82,19 +83,22 @@
 </div>
 
 
-<div style="text-align: center; padding: 3vmin;"> <%= link_to "Créer un événement", new_event_path, class: "btn_inscription"%></div>
+<div style="text-align: center; padding: 3vmin;"> <%= link_to "Créer un événement", new_event_path, class: "btn_inscription"%>
+</div>
 
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_url ("ban.png")%>');">
- <div class="titre">Ils nous font confiance</div>
+
+  <div class="titre">Ils nous font confiance</div>
 
 
-<div class="partnership">
-  <br>
-  <div class= "partenariat">
-<img src="https://companieslogo.com/img/orig/BFIT.AS_BIG-bef51b6f.png?t=1664515365">
-<img src="https://www.wellness-sportclub.fr/wp-content/uploads/2020/01/logo-site2.png" alt="wellness">
-<img src="https://www.volvic-vvx.com/wp-content/uploads/2023/03/KEEPCOOL-LOGO-NOIR.png" alt="keepcool">
+  <div class="partnership">
+    <br>
+    <div class= "partenariat">
+      <img src="https://companieslogo.com/img/orig/BFIT.AS_BIG-bef51b6f.png?t=1664515365">
+      <img src="https://www.wellness-sportclub.fr/wp-content/uploads/2020/01/logo-site2.png" alt="wellness">
+      <img src="https://www.volvic-vvx.com/wp-content/uploads/2023/03/KEEPCOOL-LOGO-NOIR.png" alt="keepcool">
+    </div>
+    <br>
   </div>
-<br>
 </div>
-  </div>
+</body>

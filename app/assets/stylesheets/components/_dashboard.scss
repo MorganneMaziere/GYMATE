@@ -8,6 +8,11 @@
   padding: 4vmin;
 }
 
+.journal_bord {
+  font-weight: bold;
+  text-align: center;
+  padding: 8vmin;
+}
 // .photo_user image{
 //   width: 100px;
 // }
@@ -24,4 +29,19 @@
 .profileinfos {
   padding: 3vmin;
   margin-left: 20px;
+}
+
+.titredash{
+  margin-bottom: -0.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 3vmin;
+}
+
+h1{
+  margin-top: 0;
+    margin-bottom: -1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 8vmin;
 }
