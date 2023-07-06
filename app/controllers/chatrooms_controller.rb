@@ -1,4 +1,9 @@
 class ChatroomsController < ApplicationController
+
+  def index
+    @chatrooms = current_user.chatrooms
+  end
+
   def show
     @buddies_list = BuddiesList.find(params[:buddies_list_id])
     @chatroom = @buddies_list.chatroom

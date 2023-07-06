@@ -24,10 +24,11 @@ Rails.application.routes.draw do
   resources :bookings, only: [:destroy]
 
   resources :reviews, only: :destroy
-  
+
   resources :chatrooms do
     resources :messages
   end
+
   #bookings
   # get "bookings/:id", to: "bookings#show", as: :new_booking
 
@@ -35,5 +36,4 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-
 end

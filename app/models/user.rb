@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :events, through: :bookings
   has_many :reviews, dependent: :destroy
-  has_many :chatrooms
+  has_many :chatrooms, through: :buddies_lists
 
   def registered_for?(event)
     registrations.exists?(event_id: event.id)
